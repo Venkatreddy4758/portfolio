@@ -1,8 +1,9 @@
 "use client";
 import { createContext, useContext, useCallback, useEffect, useRef, useState } from "react";
+import { withBase } from "@/lib/basePath";
 
 // Ambient audio, OFF by default and never autoplaying. Uses a single looping
-// track at /audio/ambient.mp3 (optional — gracefully no-ops if the file is absent).
+// track at /audio/ambient.wav (base-path aware for GitHub Pages).
 type AudioCtx = { enabled: boolean; toggle: () => void; available: boolean };
 const Ctx = createContext<AudioCtx | null>(null);
 const KEY = "vr_audio";
@@ -13,7 +14,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
   const [available, setAvailable] = useState(true);
 
   useEffect(() => {
-    const a = new Audio("/audio/ambient.mp3");
+    const a = new Audio(withBase("/audio/ambient.wav"));
     a.loop = true;
     a.volume = 0;
     a.preload = "none";
