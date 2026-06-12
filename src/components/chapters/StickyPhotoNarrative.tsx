@@ -11,7 +11,7 @@ import { useReducedMotion } from "@/lib/useReducedMotion";
 import { photoByType } from "@/data/photos";
 import { Portrait } from "@/components/media/Portrait";
 
-const photoTypes = ["native", "education", "professional", "family"];
+const photoTypes = ["outdoor", "education", "professional", "casual"];
 const bgByChapter = ["#3a211d", "#153b34", "#3d2039", "#68452f"];
 
 export function StickyPhotoNarrative() {

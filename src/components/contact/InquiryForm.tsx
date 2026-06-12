@@ -16,25 +16,23 @@ export function InquiryForm() {
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  async function submit(e: React.FormEvent) {
+  function submit(e: React.FormEvent) {
     e.preventDefault();
-    setStatus("sending");
-    try {
-      const res = await fetch("/api/inquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error();
+    // Honeypot: ignore bots silently.
+    if (form.company) {
       setStatus("ok");
-      setForm({ name: "", relation: "", contact: "", message: "", company: "" });
-    } catch {
-      // mailto fallback — recipient never appears in client source unless set here.
-      const subject = encodeURIComponent("Family Introduction — Venkat Reddy");
-      const bodyText = encodeURIComponent(`Name: ${form.name}\nRelation: ${form.relation}\nContact: ${form.contact}\n\n${form.message}`);
-      window.location.href = `mailto:?subject=${subject}&body=${bodyText}`;
-      setStatus("error");
+      return;
     }
+    // Static host (GitHub Pages) — open the visitor's mail client. The recipient
+    // is left blank so the family's address is never published in page source;
+    // the visitor sends it to the address shared with them privately.
+    const subject = encodeURIComponent("Family Introduction — Venkat Reddy Regulapally");
+    const bodyText = encodeURIComponent(
+      `Name: ${form.name}\nFamily / relation: ${form.relation}\nContact: ${form.contact}\n\n${form.message}`
+    );
+    window.location.href = `mailto:?subject=${subject}&body=${bodyText}`;
+    setStatus("ok");
+    setForm({ name: "", relation: "", contact: "", message: "", company: "" });
   }
 
   if (status === "ok") {

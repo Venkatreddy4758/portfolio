@@ -9,7 +9,7 @@ import { content } from "@/data/content";
 import { useLang } from "@/lib/LanguageProvider";
 import { Portrait } from "./Portrait";
 
-const stripIds = [4, 5, 8, 3, 10]; // Cambridge, professional, native, outdoor, festival
+const stripIds = [4, 5, 9, 3, 10]; // Cambridge, professional, travel, outdoor, festival
 const FRAME = 320; // px per frame incl. gap
 
 export function CinematicFilmstrip() {

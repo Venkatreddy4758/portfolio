@@ -15,7 +15,8 @@ import { BrassLamp } from "@/components/art/BrassLamp";
 export function FamilyCourtyard() {
   const { lang } = useLang();
   const c = content.family[lang];
-  const photo = photoByType("family");
+  // No dedicated family photo in the set — fall back to a warm casual portrait.
+  const photo = photoByType("family") ?? photoByType("casual");
 
   const members = [
     { name: profile.family.grandfather, role: lang === "te" ? "తాత" : "Grandfather" },
