@@ -34,15 +34,42 @@ export function HeroPortrait() {
       {/* drifting petals + dust */}
       <Petals />
 
+      {/* soft drifting aurora — modern, atmospheric */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -left-32 top-10 h-[42rem] w-[42rem] rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(28,91,78,0.18), transparent 65%)", filter: "blur(40px)" }}
+        animate={{ x: [0, 60, 0], y: [0, 30, 0], opacity: [0.5, 0.85, 0.5] }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 bottom-0 h-[38rem] w-[38rem] rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(194,160,106,0.22), transparent 65%)", filter: "blur(40px)" }}
+        animate={{ x: [0, -50, 0], y: [0, -20, 0], opacity: [0.4, 0.8, 0.4] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+      />
+
       <motion.div style={{ opacity }} className="relative z-10 flex w-full max-w-6xl flex-col items-center px-6 py-24 lg:flex-row lg:justify-between lg:gap-12">
         {/* Name block */}
         <motion.div style={{ y: yText }} className="text-center lg:flex-1 lg:text-left">
           <p className="mb-5 font-carved text-[11px] uppercase tracking-[0.35em] text-rose">
             {hero.eyebrow}
           </p>
-          <h1 className="font-display text-5xl leading-[0.95] text-temple-stone text-gold-edge sm:text-6xl xl:text-8xl">
+          <h1 className="font-display text-5xl leading-[0.95] text-temple-stone sm:text-6xl xl:text-8xl">
             Venkat Reddy
-            <span className="mt-1 block text-rose">Regulapally</span>
+            <motion.span
+              className="mt-1 block bg-clip-text text-transparent"
+              style={{
+                backgroundImage:
+                  "linear-gradient(100deg, #1c5b4e 0%, #c2a06a 35%, #e4c98e 50%, #c2a06a 65%, #1c5b4e 100%)",
+                backgroundSize: "250% 100%",
+              }}
+              animate={{ backgroundPositionX: ["0%", "100%"] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", repeatType: "reverse" }}
+            >
+              Regulapally
+            </motion.span>
           </h1>
           <div className="gold-rule my-7 w-40 lg:mx-0 mx-auto" />
           <div className="space-y-1 font-body text-sm text-temple-stone/75 md:text-base">

@@ -17,7 +17,7 @@ export function EducationBook() {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-20%" });
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const rotate = useTransform(scrollYProgress, [0.1, 0.4], [-72, 0]); // book cover opening
+  const yPhoto = useTransform(scrollYProgress, [0, 1], [40, -40]); // gentle parallax
   const photo = photoByType("education");
 
   return (
@@ -37,34 +37,30 @@ export function EducationBook() {
         <p className="mt-3 text-center font-body text-temple-stone/70">{e.subtitle}</p>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          {/* opening book — the graduation portrait revealed as the cover swings open */}
-          <div className="relative mx-auto w-full max-w-sm [perspective:1600px]">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-r-lg ring-1 ring-antique-gold/30">
-              {/* the photo behind the cover */}
-              {photo && (
-                <>
-                  <Portrait photo={photo} sizes="(max-width: 1024px) 80vw, 24rem" />
-                  <div className="pointer-events-none absolute inset-3 border border-champagne-gold/50" />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-emerald-depth/70 to-transparent p-5 pt-12">
-                    <p className="font-carved text-[10px] uppercase tracking-[0.3em] text-champagne-gold">Cambridge, UK</p>
-                    <p className="font-display text-xl text-moon-cream">The Graduate</p>
-                  </div>
-                </>
-              )}
-              {/* book cover that swings open to reveal the photo */}
-              <motion.div
-                style={{ rotateY: rotate, transformOrigin: "left center" }}
-                className="absolute inset-0 origin-left rounded-r-lg bg-gradient-to-br from-peacock-green to-emerald-depth ring-1 ring-antique-gold/40 [backface-visibility:hidden]"
-              >
-                <div className="grid h-full place-items-center text-center">
-                  <div>
-                    <p className="font-carved text-[10px] uppercase tracking-[0.3em] text-champagne-gold/80">Global Education</p>
-                    <span className="mt-2 block font-display text-4xl text-champagne-gold">VR</span>
-                  </div>
+          {/* graduation portrait — clean editorial frame with a gentle parallax */}
+          <motion.div
+            className="relative mx-auto w-full max-w-sm"
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-15%" }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {/* gold mat + frame */}
+            <div className="relative rounded-[2px] bg-gradient-to-br from-champagne-gold/30 to-antique-gold/10 p-3 ring-1 ring-antique-gold/40">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-[2px]">
+                {photo && (
+                  <motion.div className="absolute inset-0" style={{ y: yPhoto }}>
+                    <Portrait photo={photo} sizes="(max-width: 1024px) 80vw, 24rem" />
+                  </motion.div>
+                )}
+                <div className="pointer-events-none absolute inset-3 border border-champagne-gold/50" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-emerald-depth/75 to-transparent p-5 pt-14">
+                  <p className="font-carved text-[10px] uppercase tracking-[0.3em] text-champagne-gold">Cambridge, UK</p>
+                  <p className="font-display text-2xl text-moon-cream">The Graduate</p>
                 </div>
-              </motion.div>
+              </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* stages timeline */}
           <ol className="relative space-y-7 border-l border-antique-gold/30 pl-8">

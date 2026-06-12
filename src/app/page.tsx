@@ -28,6 +28,7 @@ import { MuseumGallery } from "@/components/media/MuseumGallery";
 import { PrivateContactPanel } from "@/components/contact/PrivateContactPanel";
 import { FinalBlessing } from "@/components/chapters/FinalBlessing";
 import { SecretLotusMessage, SecretBlessing } from "@/components/contact/SecretLotusMessage";
+import { FloatingDust } from "@/components/art/FloatingDust";
 import { photoByType } from "@/data/photos";
 
 export default function Home() {
@@ -38,6 +39,9 @@ export default function Home() {
       <LuxuryOpeningSequence />
       <LuxuryNavigation onSecret={() => setSecret(true)} />
       <CeremonialScrollThread />
+      <div className="no-print pointer-events-none fixed inset-0 z-20">
+        <FloatingDust count={26} tone="#c2a06a" />
+      </div>
 
       <main className="bg-cream text-temple-stone">
         <HeroPortrait />
