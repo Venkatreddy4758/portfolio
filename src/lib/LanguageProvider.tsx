@@ -13,6 +13,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const saved = sessionStorage.getItem(KEY) as Lang | null;
+      // SSR-safe: sessionStorage is unavailable during render, so the session
+      // language must be restored after mount.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (saved === "en" || saved === "te") setLangState(saved);
     } catch {}
   }, []);

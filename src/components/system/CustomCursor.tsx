@@ -13,6 +13,8 @@ export function CustomCursor() {
   useEffect(() => {
     const fine = window.matchMedia("(pointer: fine)").matches;
     if (!fine) return;
+    // SSR-safe: pointer capability is only known on the client, so enable here.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setEnabled(true);
 
     const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };

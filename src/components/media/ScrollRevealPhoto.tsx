@@ -4,11 +4,11 @@
 // Reveal style is chosen from the photo type.
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { Photo } from "@/data/photos";
-import { useLang } from "@/lib/LanguageProvider";
 import { useReducedMotion } from "@/lib/useReducedMotion";
 import { Portrait } from "./Portrait";
+// ScrollTrigger is registered globally in GsapProvider; the timeline references it
+// via the `scrollTrigger` config, so no direct import is needed here.
 
 type Reveal =
   | "temple-door"
@@ -36,7 +36,6 @@ export function ScrollRevealPhoto({
   photo: Photo;
   align?: "left" | "right" | "center";
 }) {
-  const { lang } = useLang();
   const reduced = useReducedMotion();
   const root = useRef<HTMLDivElement>(null);
   const reveal = revealByType[photo.type] ?? "silk-curtain";

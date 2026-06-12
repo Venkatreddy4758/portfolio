@@ -2,8 +2,6 @@
 // PHASE 4 — full narrative + all chapters. Gallery & Contact remain placeholders
 // until Phases 5–6.
 import { useState } from "react";
-import { useLang } from "@/lib/LanguageProvider";
-import { content } from "@/data/content";
 import { LuxuryNavigation } from "@/components/nav/LuxuryNavigation";
 import { MobileNavigation } from "@/components/nav/MobileNavigation";
 import { CeremonialScrollThread } from "@/components/nav/CeremonialScrollThread";
@@ -27,10 +25,11 @@ import { CinematicFilmstrip } from "@/components/media/CinematicFilmstrip";
 import { MuseumGallery } from "@/components/media/MuseumGallery";
 import { ScrollRevealPhoto } from "@/components/media/ScrollRevealPhoto";
 import { PrivateContactPanel } from "@/components/contact/PrivateContactPanel";
+import { FinalBlessing } from "@/components/chapters/FinalBlessing";
+import { SecretLotusMessage, SecretBlessing } from "@/components/contact/SecretLotusMessage";
 import { photoByType } from "@/data/photos";
 
 export default function Home() {
-  const { lang } = useLang();
   const [secret, setSecret] = useState(false);
 
   return (
@@ -63,20 +62,17 @@ export default function Home() {
         <MuseumGallery />
         <TeluguPoetryInterlude index={2} tone="var(--color-deep-wine)" />
         <PrivateContactPanel />
+        {/* hidden lotus seal — a tasteful secret interaction */}
+        <div className="bg-temple-stone">
+          <SecretLotusMessage />
+        </div>
+        <FinalBlessing />
       </main>
 
       <MobileNavigation />
 
-      {secret && (
-        <button
-          onClick={() => setSecret(false)}
-          className="fixed inset-0 z-[90] grid place-items-center bg-temple-stone/95 px-6 text-center"
-        >
-          <p lang="te" className="font-telugu text-2xl text-champagne-gold md:text-4xl">
-            {content.secret[lang].blessing}
-          </p>
-        </button>
-      )}
+      {/* monogram 5-click secret blessing */}
+      <SecretBlessing open={secret} onClose={() => setSecret(false)} />
     </>
   );
 }

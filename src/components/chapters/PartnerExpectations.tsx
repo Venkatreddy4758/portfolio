@@ -2,7 +2,7 @@
 // Partner expectations (Section 26) — graceful and positive. Editable text from
 // content.ts. No caste/salary/appearance demands.
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import { content } from "@/data/content";
 import { useLang } from "@/lib/LanguageProvider";
 import { LotusMedallion } from "@/components/art/LotusMedallion";

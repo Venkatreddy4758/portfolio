@@ -15,6 +15,8 @@ export function ShareCard({ onClose }: { onClose?: () => void }) {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
+    // SSR-safe: window.location is only available on the client.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setUrl(window.location.origin + window.location.pathname);
   }, []);
 

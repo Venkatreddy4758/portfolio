@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { X, Printer, Share2, Link2 } from "lucide-react";
 import { profile } from "@/data/profile";
 import { privacy } from "@/config/privacy";
-import { useLang } from "@/lib/LanguageProvider";
 import { getAge } from "@/lib/getAge";
 import { LotusMedallion } from "@/components/art/LotusMedallion";
 
@@ -21,7 +20,6 @@ function Row({ label, value }: { label: string; value?: string }) {
 }
 
 export function BiodataDrawer({ open, onClose, onShare }: { open: boolean; onClose: () => void; onShare?: () => void }) {
-  const { lang } = useLang();
   const age = getAge(profile.dateOfBirthISO);
 
   useEffect(() => {

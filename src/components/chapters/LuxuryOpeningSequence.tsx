@@ -23,6 +23,8 @@ export function LuxuryOpeningSequence({ onDone }: { onDone?: () => void }) {
   useEffect(() => {
     try {
       if (sessionStorage.getItem(SEEN_KEY)) {
+        // SSR-safe: only skip the intro after we can read sessionStorage on mount.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setShow(false);
         onDone?.();
         return;
