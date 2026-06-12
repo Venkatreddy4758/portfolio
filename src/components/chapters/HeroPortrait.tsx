@@ -63,7 +63,10 @@ export function HeroPortrait() {
           <p className="mb-5 font-carved text-[11px] uppercase tracking-[0.35em] text-rose">
             {hero.eyebrow}
           </p>
-          <h1 className="font-display text-5xl leading-[0.95] text-royal-maroon sm:text-6xl xl:text-8xl" style={{ textShadow: "0 1px 1px rgba(253,247,239,0.6)" }}>
+          <h1
+            className="font-display text-5xl leading-[0.95] text-royal-maroon sm:text-6xl xl:text-8xl"
+            style={{ textShadow: "0 2px 10px rgba(12,40,33,0.35), 0 0 26px rgba(183,151,74,0.45)" }}
+          >
             Venkat Reddy
             <motion.span
               className="mt-1 block bg-clip-text text-transparent"
@@ -71,7 +74,9 @@ export function HeroPortrait() {
                 backgroundImage:
                   "linear-gradient(100deg, #9a7a30 0%, #b7974a 30%, #e4c98e 50%, #b7974a 70%, #9a7a30 100%)",
                 backgroundSize: "220% 100%",
-                filter: "drop-shadow(0 1px 6px rgba(183,151,74,0.35))",
+                // dark depth + gold halo glow
+                filter:
+                  "drop-shadow(0 2px 6px rgba(12,40,33,0.45)) drop-shadow(0 0 18px rgba(216,190,126,0.6))",
               }}
               animate={{ backgroundPositionX: ["0%", "100%"] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", repeatType: "reverse" }}
@@ -90,7 +95,7 @@ export function HeroPortrait() {
 
         {/* Portrait in temple arch with a rotating gold orbit + glow */}
         <motion.div style={{ y: yPortrait }} className="relative mt-12 w-full max-w-sm lg:mt-0 lg:flex-1">
-          <div className="relative mx-auto aspect-square w-full max-w-[420px]">
+          <div className="relative mx-auto aspect-square w-full max-w-[500px]">
             {/* brighter halo glow */}
             <motion.div
               aria-hidden className="absolute inset-0 rounded-full"
@@ -121,7 +126,7 @@ export function HeroPortrait() {
               <circle cx="50" cy="50" r="49" fill="none" stroke="#1c5b4e" strokeWidth="0.2" opacity="0.4" />
             </motion.svg>
             {/* portrait arch */}
-            <TempleArchFrame tone="gold" className="absolute left-1/2 top-1/2 aspect-[3/4] w-[72%] -translate-x-1/2 -translate-y-1/2">
+            <TempleArchFrame tone="gold" className="absolute left-1/2 top-1/2 aspect-[3/4] w-[78%] -translate-x-1/2 -translate-y-1/2">
               <div className="absolute inset-[6%] overflow-hidden rounded-t-[40%] shadow-[0_24px_70px_-20px_rgba(18,58,48,0.55)]">
                 <Portrait photo={photo} priority sizes="(max-width: 1024px) 70vw, 320px" />
               </div>

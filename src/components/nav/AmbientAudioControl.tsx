@@ -19,7 +19,11 @@ export function AmbientAudioControl({ className }: { className?: string }) {
       aria-pressed={enabled}
       aria-label={enabled ? ui.audioOn : ui.audioOff}
       title={enabled ? ui.audioOn : ui.audioOff}
-      className={`inline-flex items-center gap-2 rounded-full border border-antique-gold/40 px-3 py-1.5 text-royal-maroon/90 transition-colors hover:border-antique-gold ${className ?? ""}`}
+      className={`inline-flex items-center gap-2 rounded-full border border-antique-gold/50 px-3 py-1.5 text-royal-maroon/90 transition-all hover:border-antique-gold ${className ?? ""}`}
+      style={{
+        boxShadow:
+          "0 0 0 1px rgba(183,151,74,0.15), 0 2px 10px rgba(12,40,33,0.18), 0 0 18px rgba(216,190,126,0.45)",
+      }}
     >
       {enabled ? <Volume2 size={14} /> : <VolumeX size={14} />}
       <span className={`text-[11px] tracking-[0.12em] ${"font-carved"}`}>
