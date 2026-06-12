@@ -22,22 +22,25 @@ export function StickyPhotoNarrative() {
   const reduced = useReducedMotion();
   const chapters = content.story[lang];
   const root = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(0);
+  const [activeRaw, setActive] = useState(0);
+  // Never index out of range, even if a scroll callback over/undershoots.
+  const active = Math.max(0, Math.min(chapters.length - 1, activeRaw));
 
   useEffect(() => {
     if (reduced || window.innerWidth < 1024) return;
     const el = root.current;
     if (!el) return;
+    const count = chapters.length;
     const ctx = gsap.context(() => {
-      const panels = gsap.utils.toArray<HTMLElement>(".story-panel");
       ScrollTrigger.create({
         trigger: el,
         start: "top top",
-        end: () => `+=${panels.length * 100}%`,
+        end: () => `+=${count * 100}%`,
         pin: ".story-sticky",
         scrub: true,
         onUpdate: (self) => {
-          const idx = Math.min(panels.length - 1, Math.floor(self.progress * panels.length));
+          // Clamp into [0, count-1] — progress can hit exactly 1 (→ count).
+          const idx = Math.max(0, Math.min(count - 1, Math.floor(self.progress * count)));
           setActive(idx);
         },
       });
