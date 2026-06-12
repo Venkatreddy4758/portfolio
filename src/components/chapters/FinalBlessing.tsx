@@ -11,6 +11,7 @@ import { scrollToId } from "@/components/system/LenisProvider";
 import { Portrait } from "@/components/media/Portrait";
 import { TempleArchFrame } from "@/components/art/TempleArchFrame";
 import { BrassLamp } from "@/components/art/BrassLamp";
+import { FloatingDust } from "@/components/art/FloatingDust";
 
 export function FinalBlessing({ onShare }: { onShare?: () => void }) {
   const { lang } = useLang();
@@ -23,6 +24,7 @@ export function FinalBlessing({ onShare }: { onShare?: () => void }) {
     <section className="grain relative overflow-hidden py-28" style={{ background: "radial-gradient(120% 90% at 50% 20%, #FFF9ED 0%, #F8F0DF 55%, #E9DCC0 100%)" }}>
       {/* soft rangoli floor glow */}
       <div aria-hidden className="pointer-events-none absolute bottom-0 left-1/2 h-64 w-[120%] -translate-x-1/2 rounded-[50%]" style={{ background: "radial-gradient(circle, rgba(197,161,90,0.25), transparent 65%)" }} />
+      <FloatingDust count={16} />
 
       <div ref={ref} className="relative mx-auto flex max-w-3xl flex-col items-center px-6 text-center text-royal-maroon">
         <div className="mb-8 flex gap-10">

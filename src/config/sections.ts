@@ -15,6 +15,7 @@ export const sections: Section[] = [
   { id: "career", en: "Career", te: "వృత్తి", inNav: true },
   { id: "family", en: "Family", te: "కుటుంబం", inNav: true },
   { id: "personality", en: "Personality", te: "వ్యక్తిత్వం" },
+  { id: "hobbies", en: "Hobbies", te: "అభిరుచులు" },
   { id: "gallery", en: "Gallery", te: "చిత్రాలు", inNav: true },
   { id: "values", en: "Values", te: "విలువలు", inNav: true },
   { id: "contact", en: "Contact", te: "సంప్రదింపు", inNav: true },

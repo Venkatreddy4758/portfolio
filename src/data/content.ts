@@ -201,6 +201,33 @@ export const content = {
     },
   },
 
+  hobbies: {
+    en: {
+      title: "Beyond the Everyday",
+      subtitle: "The things that keep him grounded and glad",
+      items: [
+        { icon: "dumbbell", title: "Morning Workout", note: "Gym and a run to begin each day with energy and discipline." },
+        { icon: "trophy", title: "Weekend Badminton", note: "A favourite way to unwind and stay active with friends." },
+        { icon: "film", title: "Cinema & Films", note: "A genuine love for good stories told on screen." },
+        { icon: "newspaper", title: "Daily News", note: "Staying informed and curious about the world." },
+        { icon: "plane", title: "Travel", note: "Exploring new places, cultures and perspectives." },
+        { icon: "music", title: "Music", note: "A quiet companion through work and rest." },
+      ],
+    },
+    te: {
+      title: "Beyond the Everyday",
+      subtitle: "The things that keep him grounded and glad",
+      items: [
+        { icon: "dumbbell", title: "Morning Workout", note: "Gym and a run to begin each day with energy and discipline." },
+        { icon: "trophy", title: "Weekend Badminton", note: "A favourite way to unwind and stay active with friends." },
+        { icon: "film", title: "Cinema & Films", note: "A genuine love for good stories told on screen." },
+        { icon: "newspaper", title: "Daily News", note: "Staying informed and curious about the world." },
+        { icon: "plane", title: "Travel", note: "Exploring new places, cultures and perspectives." },
+        { icon: "music", title: "Music", note: "A quiet companion through work and rest." },
+      ],
+    },
+  },
+
   dayInLife: {
     en: {
       title: "A Day in His Life",

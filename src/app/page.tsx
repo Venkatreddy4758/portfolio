@@ -17,6 +17,7 @@ import { FamilyCourtyard } from "@/components/chapters/FamilyCourtyard";
 import { TelanganaRoots } from "@/components/chapters/TelanganaRoots";
 import { PersonalityConstellation } from "@/components/chapters/PersonalityConstellation";
 import { DayInLifeTimeline } from "@/components/chapters/DayInLifeTimeline";
+import { Hobbies } from "@/components/chapters/Hobbies";
 import { HoroscopeChamber } from "@/components/chapters/HoroscopeChamber";
 import { MarriageValues } from "@/components/chapters/MarriageValues";
 import { PartnerExpectations } from "@/components/chapters/PartnerExpectations";
@@ -57,6 +58,7 @@ export default function Home() {
         <TelanganaRoots />
         <TeluguPoetryInterlude index={1} tone="var(--color-blush-deep)" />
         <PersonalityConstellation />
+        <Hobbies />
         <DayInLifeTimeline />
         <HoroscopeChamber />
         <MarriageValues />

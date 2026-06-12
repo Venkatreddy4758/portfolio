@@ -9,6 +9,7 @@ import { useLang } from "@/lib/LanguageProvider";
 import { photoByType } from "@/data/photos";
 import { Portrait } from "@/components/media/Portrait";
 import { SectionDivider } from "@/components/art/SectionDivider";
+import { FloatingDust } from "@/components/art/FloatingDust";
 
 export function EducationBook() {
   const { lang } = useLang();
@@ -28,6 +29,7 @@ export function EducationBook() {
     >
       {/* soft window light */}
       <div aria-hidden className="pointer-events-none absolute -right-20 top-0 h-96 w-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(229,201,142,0.18), transparent 70%)" }} />
+      <FloatingDust count={14} />
 
       <div className="mx-auto max-w-6xl px-6">
         <SectionDivider className="mb-6" />
@@ -35,23 +37,30 @@ export function EducationBook() {
         <p className="mt-3 text-center font-body text-temple-stone/70">{e.subtitle}</p>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          {/* opening book */}
-          <div className="relative mx-auto w-full max-w-md [perspective:1600px]">
-            <div className="relative aspect-[4/3] rounded-r-lg bg-blush ring-1 ring-antique-gold/30">
-              <div className="absolute inset-0 grid place-items-center p-8 text-center">
-                <div>
-                  <p className="font-carved text-xs uppercase tracking-[0.3em] text-rose">Curriculum Vitae</p>
-                  <div className="gold-rule my-4" />
-                  <p className="font-display text-lg italic text-royal-maroon">A Global Outlook</p>
-                </div>
-              </div>
-              {/* book cover that swings open */}
+          {/* opening book — the graduation portrait revealed as the cover swings open */}
+          <div className="relative mx-auto w-full max-w-sm [perspective:1600px]">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-r-lg ring-1 ring-antique-gold/30">
+              {/* the photo behind the cover */}
+              {photo && (
+                <>
+                  <Portrait photo={photo} sizes="(max-width: 1024px) 80vw, 24rem" />
+                  <div className="pointer-events-none absolute inset-3 border border-champagne-gold/50" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-emerald-depth/70 to-transparent p-5 pt-12">
+                    <p className="font-carved text-[10px] uppercase tracking-[0.3em] text-champagne-gold">Cambridge, UK</p>
+                    <p className="font-display text-xl text-moon-cream">The Graduate</p>
+                  </div>
+                </>
+              )}
+              {/* book cover that swings open to reveal the photo */}
               <motion.div
                 style={{ rotateY: rotate, transformOrigin: "left center" }}
-                className="absolute inset-0 origin-left rounded-r-lg bg-gradient-to-br from-rose-soft to-blush ring-1 ring-antique-gold/40 [backface-visibility:hidden]"
+                className="absolute inset-0 origin-left rounded-r-lg bg-gradient-to-br from-peacock-green to-emerald-depth ring-1 ring-antique-gold/40 [backface-visibility:hidden]"
               >
-                <div className="grid h-full place-items-center">
-                  <span className="font-display text-3xl text-royal-maroon">VR</span>
+                <div className="grid h-full place-items-center text-center">
+                  <div>
+                    <p className="font-carved text-[10px] uppercase tracking-[0.3em] text-champagne-gold/80">Global Education</p>
+                    <span className="mt-2 block font-display text-4xl text-champagne-gold">VR</span>
+                  </div>
                 </div>
               </motion.div>
             </div>
