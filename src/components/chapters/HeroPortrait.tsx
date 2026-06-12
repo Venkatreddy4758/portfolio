@@ -80,14 +80,34 @@ export function HeroPortrait() {
           </div>
         </motion.div>
 
-        {/* Portrait in temple arch */}
-        <motion.div style={{ y: yPortrait }} className="mt-12 w-full max-w-sm lg:mt-0 lg:flex-1">
-          <TempleArchFrame tone="gold" className="mx-auto aspect-[3/4] w-full max-w-[360px]">
-            <div className="absolute inset-[6%] overflow-hidden rounded-t-[40%]">
-              <Portrait photo={photo} priority sizes="(max-width: 1024px) 80vw, 360px" />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cream/40 to-transparent" />
-            </div>
-          </TempleArchFrame>
+        {/* Portrait in temple arch with a rotating gold orbit + glow */}
+        <motion.div style={{ y: yPortrait }} className="relative mt-12 w-full max-w-sm lg:mt-0 lg:flex-1">
+          <div className="relative mx-auto aspect-square w-full max-w-[420px]">
+            {/* soft glow */}
+            <div aria-hidden className="absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, rgba(194,160,106,0.28), transparent 62%)", filter: "blur(20px)" }} />
+            {/* slow rotating dashed orbit */}
+            <motion.svg
+              aria-hidden viewBox="0 0 100 100" className="absolute inset-0 h-full w-full"
+              animate={{ rotate: 360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            >
+              <circle cx="50" cy="50" r="48" fill="none" stroke="#c2a06a" strokeWidth="0.3" strokeDasharray="1 3" opacity="0.7" />
+              <circle cx="50" cy="2" r="0.9" fill="#1c5b4e" />
+              <circle cx="50" cy="98" r="0.7" fill="#c2a06a" />
+            </motion.svg>
+            <motion.svg
+              aria-hidden viewBox="0 0 100 100" className="absolute inset-[5%] h-[90%] w-[90%]"
+              animate={{ rotate: -360 }} transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+            >
+              <circle cx="50" cy="50" r="49" fill="none" stroke="#1c5b4e" strokeWidth="0.2" opacity="0.4" />
+            </motion.svg>
+            {/* portrait arch */}
+            <TempleArchFrame tone="gold" className="absolute left-1/2 top-1/2 aspect-[3/4] w-[72%] -translate-x-1/2 -translate-y-1/2">
+              <div className="absolute inset-[6%] overflow-hidden rounded-t-[40%] shadow-[0_20px_60px_-20px_rgba(18,58,48,0.5)]">
+                <Portrait photo={photo} priority sizes="(max-width: 1024px) 70vw, 320px" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cream/30 to-transparent" />
+              </div>
+            </TempleArchFrame>
+          </div>
         </motion.div>
       </motion.div>
 

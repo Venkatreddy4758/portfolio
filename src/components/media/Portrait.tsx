@@ -48,8 +48,8 @@ export function Portrait({
         sizes={sizes}
         onLoad={() => setLoaded(true)}
         onContextMenu={(e) => e.preventDefault()}
-        className={`object-cover transition-[opacity,transform,filter] duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          loaded ? "opacity-100 blur-0 scale-100" : "opacity-0 blur-md scale-105"
+        className={`object-cover transition-opacity duration-700 ease-out ${
+          loaded ? "opacity-100" : "opacity-0"
         }`}
         style={{ objectPosition: focal }}
       />

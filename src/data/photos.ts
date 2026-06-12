@@ -36,6 +36,7 @@ export const photos: Photo[] = [
   { id: 12, src: "/images/venkat/12-final.webp", alt: "Looking ahead", chapter: "Blessing", title: "Ready to Begin", titleTelugu: "", type: "finale", category: "Portraits", focalPoint: { desktop: "50% 26%", mobile: "50% 22%" } },
   { id: 13, src: "/images/venkat/13-park.webp", alt: "A bright day in the park", chapter: "Life", title: "Open Air", titleTelugu: "", type: "park", category: "Life", focalPoint: { desktop: "50% 52%", mobile: "50% 52%" } },
   { id: 14, src: "/images/venkat/14-portrait-bw.webp", alt: "Black and white profile portrait", chapter: "Character", title: "A Quiet Moment", titleTelugu: "", type: "portrait-bw", category: "Portraits", focalPoint: { desktop: "42% 34%", mobile: "42% 30%" } },
+  { id: 15, src: "/images/venkat/15-milestone.webp", alt: "A proud milestone", chapter: "Journey", title: "Milestones", titleTelugu: "", type: "milestone", category: "Journey", focalPoint: { desktop: "50% 40%", mobile: "50% 42%" } },
 ];
 
 export const photoById = (id: number) => photos.find((p) => p.id === id);
