@@ -4,6 +4,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { Photo } from "@/data/photos";
+import { withBase } from "@/lib/basePath";
 
 type Props = {
   photo: Photo;
@@ -39,7 +40,7 @@ export function Portrait({
       className={`relative h-full w-full overflow-hidden ${rounded ? "rounded-2xl" : ""} ${className ?? ""}`}
     >
       <Image
-        src={src}
+        src={withBase(src)}
         alt={photo.alt}
         fill
         priority={priority}

@@ -4,11 +4,14 @@
 // Reveal style is chosen from the photo type.
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { Photo } from "@/data/photos";
 import { useReducedMotion } from "@/lib/useReducedMotion";
 import { Portrait } from "./Portrait";
-// ScrollTrigger is registered globally in GsapProvider; the timeline references it
-// via the `scrollTrigger` config, so no direct import is needed here.
+
+// Register at module load (client) so the plugin is ready before this
+// component's effect creates a scrollTrigger timeline.
+if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
 type Reveal =
   | "temple-door"

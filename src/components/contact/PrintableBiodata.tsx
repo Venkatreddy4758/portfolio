@@ -7,6 +7,7 @@ import { profile } from "@/data/profile";
 import { privacy } from "@/config/privacy";
 import { photoByType } from "@/data/photos";
 import { getAge } from "@/lib/getAge";
+import { withBase } from "@/lib/basePath";
 
 function Line({ label, value }: { label: string; value?: string }) {
   if (!value) return null;
@@ -90,7 +91,7 @@ export function PrintableBiodata() {
         <div>
           <div className="relative aspect-[3/4] w-full overflow-hidden border-[3px] border-[#C5A15A]">
             {photo && (
-              <Image src={photo.src} alt={photo.alt} fill className="object-cover" style={{ objectPosition: photo.focalPoint.desktop }} sizes="60mm" />
+              <Image src={withBase(photo.src)} alt={photo.alt} fill className="object-cover" style={{ objectPosition: photo.focalPoint.desktop }} sizes="60mm" />
             )}
           </div>
         </div>

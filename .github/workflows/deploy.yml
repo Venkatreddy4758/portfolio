@@ -32,6 +32,8 @@ jobs:
       - name: Build static export
         env:
           GITHUB_PAGES: "true"
+          # Served under /portfolio on Pages — used to prefix image src.
+          NEXT_PUBLIC_BASE_PATH: /portfolio
           # Public site URL (used for OG tags, sitemap, share links).
           NEXT_PUBLIC_SITE_URL: https://venkatreddy4758.github.io/portfolio
         run: npm run build

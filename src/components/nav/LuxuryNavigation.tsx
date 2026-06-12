@@ -42,9 +42,10 @@ export function LuxuryNavigation({ onSecret }: { onSecret?: () => void }) {
         backdropFilter: condensed ? "blur(8px)" : "none",
       }}
     >
-      <button onClick={() => scrollToId("intro")} aria-label="Back to top" data-cursor="open">
+      {/* span (not button) so we don't nest a <button> inside a <button> */}
+      <span onClick={() => scrollToId("intro")} className="cursor-pointer" role="img" aria-label="Back to top">
         <RoyalMonogram size={condensed ? 40 : 52} onSecret={onSecret} />
-      </button>
+      </span>
 
       <nav aria-label="Sections">
         <ul className="flex items-center gap-1 rounded-full border border-antique-gold/25 bg-temple-stone/30 px-2 py-1.5">

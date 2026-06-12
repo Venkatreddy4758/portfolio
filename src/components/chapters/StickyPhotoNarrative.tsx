@@ -11,6 +11,9 @@ import { useReducedMotion } from "@/lib/useReducedMotion";
 import { photoByType } from "@/data/photos";
 import { Portrait } from "@/components/media/Portrait";
 
+// Register at module load (client) so the plugin is ready before the pin effect.
+if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
+
 const photoTypes = ["outdoor", "education", "professional", "casual"];
 const bgByChapter = ["#3a211d", "#153b34", "#3d2039", "#68452f"];
 
