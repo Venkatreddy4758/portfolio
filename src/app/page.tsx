@@ -24,9 +24,13 @@ import { HoroscopeChamber } from "@/components/chapters/HoroscopeChamber";
 import { MarriageValues } from "@/components/chapters/MarriageValues";
 import { PartnerExpectations } from "@/components/chapters/PartnerExpectations";
 import { TeluguPoetryInterlude } from "@/components/chapters/TeluguPoetryInterlude";
+import { CinematicFilmstrip } from "@/components/media/CinematicFilmstrip";
+import { MuseumGallery } from "@/components/media/MuseumGallery";
+import { ScrollRevealPhoto } from "@/components/media/ScrollRevealPhoto";
+import { photoByType } from "@/data/photos";
 import { SectionDivider } from "@/components/art/SectionDivider";
 
-const placeholderIds = ["gallery", "contact"];
+const placeholderIds = ["contact"];
 
 export default function Home() {
   const { lang } = useLang();
@@ -44,6 +48,9 @@ export default function Home() {
         <ProfileMedallion />
         <BeyondBiodata />
         <TeluguPoetryInterlude index={3} tone="var(--color-temple-stone)" />
+        <div className="bg-temple-stone">
+          <ScrollRevealPhoto photo={photoByType("traditional")!} align="center" />
+        </div>
         <JourneyMap />
         <EducationBook />
         <ProfessionalChapter />
@@ -55,6 +62,8 @@ export default function Home() {
         <HoroscopeChamber />
         <MarriageValues />
         <PartnerExpectations />
+        <CinematicFilmstrip />
+        <MuseumGallery />
         <TeluguPoetryInterlude index={2} tone="var(--color-deep-wine)" />
 
         {/* Placeholder chapters — replaced in Phases 5–6. */}
