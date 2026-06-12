@@ -4,7 +4,6 @@
 import { useState } from "react";
 import { useLang } from "@/lib/LanguageProvider";
 import { content } from "@/data/content";
-import { sections, label } from "@/config/sections";
 import { LuxuryNavigation } from "@/components/nav/LuxuryNavigation";
 import { MobileNavigation } from "@/components/nav/MobileNavigation";
 import { CeremonialScrollThread } from "@/components/nav/CeremonialScrollThread";
@@ -27,10 +26,8 @@ import { TeluguPoetryInterlude } from "@/components/chapters/TeluguPoetryInterlu
 import { CinematicFilmstrip } from "@/components/media/CinematicFilmstrip";
 import { MuseumGallery } from "@/components/media/MuseumGallery";
 import { ScrollRevealPhoto } from "@/components/media/ScrollRevealPhoto";
+import { PrivateContactPanel } from "@/components/contact/PrivateContactPanel";
 import { photoByType } from "@/data/photos";
-import { SectionDivider } from "@/components/art/SectionDivider";
-
-const placeholderIds = ["contact"];
 
 export default function Home() {
   const { lang } = useLang();
@@ -65,21 +62,7 @@ export default function Home() {
         <CinematicFilmstrip />
         <MuseumGallery />
         <TeluguPoetryInterlude index={2} tone="var(--color-deep-wine)" />
-
-        {/* Placeholder chapters — replaced in Phases 5–6. */}
-        {sections.filter((s) => placeholderIds.includes(s.id)).map((s, i) => (
-          <section
-            key={s.id}
-            id={s.id}
-            className="flex min-h-[70vh] flex-col items-center justify-center gap-4 px-6 text-center"
-            style={{ background: i % 2 ? "var(--color-temple-stone)" : "var(--color-emerald-depth)" }}
-          >
-            <SectionDivider label={s.en} />
-            <h2 className="font-display text-4xl text-champagne-gold md:text-5xl">{label(s, lang)}</h2>
-            <p lang="te" className="font-telugu text-lg text-antique-gold">{s.te}</p>
-            <p className="text-xs uppercase tracking-[0.3em] text-warm-ivory/40">Chapter coming in a later phase</p>
-          </section>
-        ))}
+        <PrivateContactPanel />
       </main>
 
       <MobileNavigation />
