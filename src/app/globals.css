@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TAILWIND v4 DESIGN TOKENS — generates utilities like bg-royal-maroon,
+   text-antique-gold, font-display, font-telugu, ease-silk, etc.
+   ───────────────────────────────────────────────────────────────────────── */
+@theme {
+  --color-temple-stone: #3a211d;
+  --color-royal-maroon: #5e1826;
+  --color-deep-wine: #741f3a;
+  --color-kumkum-red: #9e2637;
+  --color-antique-gold: #c5a15a;
+  --color-champagne-gold: #e4c98e;
+  --color-warm-ivory: #f8f0df;
+  --color-sandalwood: #d6b58a;
+  --color-turmeric: #d5a437;
+  --color-lotus-rose: #b95872;
+  --color-peacock-green: #174e48;
+  --color-emerald-depth: #153b34;
+  --color-silk-plum: #3d2039;
+  --color-earth-brown: #68452f;
+  --color-moon-cream: #fff9ed;
+
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-display-alt: var(--font-playfair), Georgia, serif;
+  --font-carved: var(--font-cinzel), Georgia, serif;
+  --font-body: var(--font-manrope), system-ui, sans-serif;
+  --font-telugu: var(--font-noto-serif-telugu), serif;
+  --font-telugu-sans: var(--font-noto-sans-telugu), sans-serif;
+
+  --ease-silk: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-stone: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-drift: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ── Base ── */
+:root {
+  --bg: #f8f0df;
+  --fg: #3a211d;
+  color-scheme: light;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Telugu text needs more line-height and the serif Telugu face. */
+.font-telugu,
+:lang(te) {
+  font-family: var(--font-telugu);
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+::selection {
+  background: var(--color-antique-gold);
+  color: var(--color-temple-stone);
+}
+
+/* ── Custom cursor ── */
+.cursor-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+.cursor-layer[data-hidden="true"] { opacity: 0; }
+.cursor-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
+  border: 1px solid var(--color-antique-gold);
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+  transition: width 0.35s var(--ease-silk), height 0.35s var(--ease-silk),
+    background-color 0.35s var(--ease-silk);
+  will-change: transform;
+}
+.cursor-ring.is-labelled {
+  width: 72px;
+  height: 72px;
+  margin: -36px 0 0 -36px;
+  background: color-mix(in srgb, var(--color-royal-maroon) 78%, transparent);
+}
+.cursor-label {
+  font-family: var(--font-carved);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--color-champagne-gold);
+}
+.cursor-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  border-radius: 9999px;
+  background: var(--color-antique-gold);
+  will-change: transform;
+}
+@media (pointer: coarse) {
+  .cursor-layer { display: none; }
+}
+
+/* ── Block image download when privacy.blockImageDownload is on ── */
+.no-save img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* ── Hide scrollbars on draggable strips ── */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ── Reusable luxury helpers ── */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-antique-gold) 20%,
+    var(--color-champagne-gold) 50%,
+    var(--color-antique-gold) 80%,
+    transparent
+  );
+}
+.text-gold-edge {
+  text-shadow: 0 0 18px color-mix(in srgb, var(--color-champagne-gold) 40%, transparent);
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Mask reveal used by poetry / headings. */
+.mask-reveal {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path var(--reveal-dur, 1.2s) var(--ease-silk);
+}
+.mask-reveal[data-shown="true"] { clip-path: inset(0 0 0 0); }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Print foundation (full styles live in the printable biodata route) ── */
+@media print {
+  .no-print { display: none !important; }
+}
