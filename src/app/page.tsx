@@ -1,6 +1,6 @@
 "use client";
-// PHASE 3 — core narrative assembled. Career/Family/Personality/Gallery/Values/
-// Contact remain placeholders until Phases 4–6.
+// PHASE 4 — full narrative + all chapters. Gallery & Contact remain placeholders
+// until Phases 5–6.
 import { useState } from "react";
 import { useLang } from "@/lib/LanguageProvider";
 import { content } from "@/data/content";
@@ -14,10 +14,19 @@ import { StickyPhotoNarrative } from "@/components/chapters/StickyPhotoNarrative
 import { ProfileMedallion } from "@/components/chapters/ProfileMedallion";
 import { BeyondBiodata } from "@/components/chapters/BeyondBiodata";
 import { JourneyMap } from "@/components/chapters/JourneyMap";
+import { EducationBook } from "@/components/chapters/EducationBook";
+import { ProfessionalChapter } from "@/components/chapters/ProfessionalChapter";
+import { FamilyCourtyard } from "@/components/chapters/FamilyCourtyard";
+import { TelanganaRoots } from "@/components/chapters/TelanganaRoots";
+import { PersonalityConstellation } from "@/components/chapters/PersonalityConstellation";
+import { DayInLifeTimeline } from "@/components/chapters/DayInLifeTimeline";
+import { HoroscopeChamber } from "@/components/chapters/HoroscopeChamber";
+import { MarriageValues } from "@/components/chapters/MarriageValues";
+import { PartnerExpectations } from "@/components/chapters/PartnerExpectations";
 import { TeluguPoetryInterlude } from "@/components/chapters/TeluguPoetryInterlude";
 import { SectionDivider } from "@/components/art/SectionDivider";
 
-const placeholderIds = ["career", "family", "personality", "gallery", "values", "contact"];
+const placeholderIds = ["gallery", "contact"];
 
 export default function Home() {
   const { lang } = useLang();
@@ -34,16 +43,27 @@ export default function Home() {
         <StickyPhotoNarrative />
         <ProfileMedallion />
         <BeyondBiodata />
-        <TeluguPoetryInterlude index={0} tone="var(--color-temple-stone)" />
+        <TeluguPoetryInterlude index={3} tone="var(--color-temple-stone)" />
         <JourneyMap />
+        <EducationBook />
+        <ProfessionalChapter />
+        <FamilyCourtyard />
+        <TelanganaRoots />
+        <TeluguPoetryInterlude index={1} tone="var(--color-silk-plum)" />
+        <PersonalityConstellation />
+        <DayInLifeTimeline />
+        <HoroscopeChamber />
+        <MarriageValues />
+        <PartnerExpectations />
+        <TeluguPoetryInterlude index={2} tone="var(--color-deep-wine)" />
 
-        {/* Placeholder chapters — replaced in Phases 4–6. */}
+        {/* Placeholder chapters — replaced in Phases 5–6. */}
         {sections.filter((s) => placeholderIds.includes(s.id)).map((s, i) => (
           <section
             key={s.id}
             id={s.id}
             className="flex min-h-[70vh] flex-col items-center justify-center gap-4 px-6 text-center"
-            style={{ background: i % 2 ? "var(--color-temple-stone)" : "var(--color-deep-wine)" }}
+            style={{ background: i % 2 ? "var(--color-temple-stone)" : "var(--color-emerald-depth)" }}
           >
             <SectionDivider label={s.en} />
             <h2 className="font-display text-4xl text-champagne-gold md:text-5xl">{label(s, lang)}</h2>
@@ -55,7 +75,6 @@ export default function Home() {
 
       <MobileNavigation />
 
-      {/* secret blessing placeholder — full overlay arrives in Phase 7 */}
       {secret && (
         <button
           onClick={() => setSecret(false)}
