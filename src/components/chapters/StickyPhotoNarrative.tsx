@@ -15,7 +15,7 @@ import { Portrait } from "@/components/media/Portrait";
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
 const photoTypes = ["outdoor", "education", "professional", "casual"];
-const bgByChapter = ["#3a211d", "#153b34", "#3d2039", "#68452f"];
+const bgByChapter = ["#fdf6ec", "#f8e3e6", "#f6e9d8", "#f0cdd3"];
 
 export function StickyPhotoNarrative() {
   const { lang } = useLang();
@@ -58,20 +58,20 @@ export function StickyPhotoNarrative() {
         <div className="mx-auto grid w-full max-w-6xl grid-cols-2 items-center gap-12 px-10">
           {/* narrative */}
           <div className="relative">
-            <span className="font-display text-[8rem] leading-none text-antique-gold/15">
+            <span className="font-display text-[8rem] leading-none text-rose/15">
               {chapters[active].no}
             </span>
             <div className="-mt-10">
-              <p lang="te" className="font-telugu text-xl text-antique-gold">{chapters[active].kicker}</p>
-              <h2 className="mt-2 font-display text-5xl text-champagne-gold">{chapters[active].title}</h2>
-              <p className="mt-5 max-w-md font-body text-lg leading-relaxed text-warm-ivory/80">
+              <p lang="te" className="font-telugu text-xl text-rose">{chapters[active].kicker}</p>
+              <h2 className="mt-2 font-display text-5xl text-royal-maroon">{chapters[active].title}</h2>
+              <p className="mt-5 max-w-md font-body text-lg leading-relaxed text-temple-stone/80">
                 {chapters[active].body}
               </p>
             </div>
             {/* progress dots */}
             <div className="mt-10 flex gap-2">
               {chapters.map((_, i) => (
-                <span key={i} className={`h-px transition-all duration-500 ${i === active ? "w-12 bg-champagne-gold" : "w-5 bg-warm-ivory/25"}`} />
+                <span key={i} className={`h-px transition-all duration-500 ${i === active ? "w-12 bg-rose-gold" : "w-5 bg-rose/25"}`} />
               ))}
             </div>
           </div>
@@ -106,10 +106,10 @@ export function StickyPhotoNarrative() {
                   <Portrait photo={p} sizes="90vw" />
                 </div>
               )}
-              <span className="font-display text-6xl text-antique-gold/20">{ch.no}</span>
-              <p lang="te" className="-mt-4 font-telugu text-lg text-antique-gold">{ch.kicker}</p>
-              <h2 className="mt-1 font-display text-3xl text-champagne-gold">{ch.title}</h2>
-              <p className="mt-3 font-body text-base leading-relaxed text-warm-ivory/80">{ch.body}</p>
+              <span className="font-display text-6xl text-rose/20">{ch.no}</span>
+              <p lang="te" className="-mt-4 font-telugu text-lg text-rose">{ch.kicker}</p>
+              <h2 className="mt-1 font-display text-3xl text-royal-maroon">{ch.title}</h2>
+              <p className="mt-3 font-body text-base leading-relaxed text-temple-stone/80">{ch.body}</p>
             </div>
           );
         })}

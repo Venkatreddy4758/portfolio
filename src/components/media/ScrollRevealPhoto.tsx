@@ -96,12 +96,12 @@ export function ScrollRevealPhoto({
           <Portrait photo={photo} sizes="(max-width: 768px) 90vw, 42rem" />
         </div>
         {/* carved doors for temple-door reveal */}
-        <div className="srp-door-l absolute inset-y-0 left-0 z-10 hidden w-1/2 bg-gradient-to-r from-temple-stone to-royal-maroon" style={{ boxShadow: "inset -12px 0 24px rgba(0,0,0,0.4)" }} />
-        <div className="srp-door-r absolute inset-y-0 right-0 z-10 hidden w-1/2 bg-gradient-to-l from-temple-stone to-royal-maroon" style={{ boxShadow: "inset 12px 0 24px rgba(0,0,0,0.4)" }} />
+        <div className="srp-door-l absolute inset-y-0 left-0 z-10 hidden w-1/2 bg-gradient-to-r from-rose-soft to-blush-deep" style={{ boxShadow: "inset -12px 0 24px rgba(0,0,0,0.4)" }} />
+        <div className="srp-door-r absolute inset-y-0 right-0 z-10 hidden w-1/2 bg-gradient-to-l from-rose-soft to-blush-deep" style={{ boxShadow: "inset 12px 0 24px rgba(0,0,0,0.4)" }} />
         {/* caption */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-temple-stone/80 to-transparent p-5">
-          <p className="font-display text-lg text-warm-ivory">{photo.title}</p>
-          <p lang="te" className="font-telugu text-sm text-antique-gold">{photo.titleTelugu}</p>
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-cream/95 to-transparent p-5">
+          <p className="font-display text-lg text-temple-stone">{photo.title}</p>
+          <p lang="te" className="font-telugu text-sm text-rose">{photo.titleTelugu}</p>
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@ export function SecretBlessing({ open, onClose }: { open: boolean; onClose: () =
     <AnimatePresence>
       {open && (
         <motion.button
-          className="fixed inset-0 z-[95] grid place-items-center bg-temple-stone/95 px-6 text-center"
+          className="fixed inset-0 z-[95] grid place-items-center bg-blush/95 px-6 text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -25,12 +25,12 @@ export function SecretBlessing({ open, onClose }: { open: boolean; onClose: () =
         >
           <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="flex flex-col items-center gap-6">
             <LotusMedallion size={64} tone="#E4C98E" open />
-            <p lang="te" className="font-telugu text-2xl leading-relaxed text-champagne-gold md:text-4xl">
+            <p lang="te" className="font-telugu text-2xl leading-relaxed text-royal-maroon md:text-4xl">
               రెండు హృదయాలు,
               <br />రెండు కుటుంబాలు,
               <br />ఒక అందమైన భవిష్యత్తు.
             </p>
-            <p className="font-body text-sm italic text-warm-ivory/60">{s.blessing}</p>
+            <p className="font-body text-sm italic text-temple-stone/60">{s.blessing}</p>
           </motion.div>
         </motion.button>
       )}
@@ -70,10 +70,10 @@ export function SecretLotusMessage() {
               <motion.div animate={{ rotate: 360 }} transition={{ duration: 1.4 }}>
                 <LotusMedallion size={72} tone="#E4C98E" open />
               </motion.div>
-              <p lang="te" className="max-w-xl font-telugu text-2xl leading-relaxed text-champagne-gold md:text-3xl">
+              <p lang="te" className="max-w-xl font-telugu text-2xl leading-relaxed text-royal-maroon md:text-3xl">
                 {s.lotusTe}
               </p>
-              <motion.p className="font-body text-sm italic text-warm-ivory/60" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
+              <motion.p className="font-body text-sm italic text-temple-stone/60" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
                 {s.lotus}
               </motion.p>
             </motion.div>

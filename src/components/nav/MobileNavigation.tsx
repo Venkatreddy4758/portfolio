@@ -43,10 +43,10 @@ export function MobileNavigation() {
         aria-current={isActive ? "true" : undefined}
         className="flex min-w-[56px] flex-col items-center gap-1 py-2"
       >
-        <span className={isActive ? "text-champagne-gold" : "text-warm-ivory/55"}>
+        <span className={isActive ? "text-royal-maroon" : "text-temple-stone/55"}>
           <Icon size={20} />
         </span>
-        <span className={`text-[9px] tracking-wide ${isActive ? "text-champagne-gold" : "text-warm-ivory/45"} ${lang === "te" ? "font-telugu" : ""}`}>
+        <span className={`text-[9px] tracking-wide ${isActive ? "text-royal-maroon" : "text-temple-stone/45"} ${lang === "te" ? "font-telugu" : ""}`}>
           {label(s, lang)}
         </span>
       </button>
@@ -57,7 +57,7 @@ export function MobileNavigation() {
     <>
       <nav
         aria-label="Sections"
-        className="no-print fixed inset-x-0 bottom-0 z-40 flex items-center justify-around border-t border-antique-gold/25 bg-temple-stone/90 px-2 pb-[env(safe-area-inset-bottom)] backdrop-blur-md lg:hidden"
+        className="no-print fixed inset-x-0 bottom-0 z-40 flex items-center justify-around border-t border-antique-gold/25 bg-blush/90 px-2 pb-[env(safe-area-inset-bottom)] backdrop-blur-md lg:hidden"
       >
         {navSections.filter((s) => primary.includes(s.id)).map((s) => (
           <Item key={s.id} s={s} />
@@ -65,7 +65,7 @@ export function MobileNavigation() {
         <button
           onClick={() => setOpen(true)}
           aria-label="More"
-          className="flex min-w-[56px] flex-col items-center gap-1 py-2 text-warm-ivory/55"
+          className="flex min-w-[56px] flex-col items-center gap-1 py-2 text-temple-stone/55"
         >
           <Menu size={20} />
           <span className="text-[9px]">More</span>
@@ -76,15 +76,15 @@ export function MobileNavigation() {
         <div className="no-print fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true">
           <button
             aria-label="Close menu"
-            className="absolute inset-0 bg-temple-stone/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-blush/80 backdrop-blur-sm"
             onClick={() => setOpen(false)}
           />
-          <div className="absolute inset-x-4 bottom-6 rounded-3xl border border-antique-gold/30 bg-royal-maroon p-6">
+          <div className="absolute inset-x-4 bottom-6 rounded-3xl border border-antique-gold/30 bg-cream p-6">
             <div className="mb-4 flex items-center justify-between">
-              <span className="font-carved text-xs uppercase tracking-[0.25em] text-champagne-gold">
+              <span className="font-carved text-xs uppercase tracking-[0.25em] text-royal-maroon">
                 Navigate
               </span>
-              <button onClick={() => setOpen(false)} aria-label="Close" className="text-warm-ivory/70">
+              <button onClick={() => setOpen(false)} aria-label="Close" className="text-temple-stone/70">
                 <X size={20} />
               </button>
             </div>
@@ -95,8 +95,8 @@ export function MobileNavigation() {
                     onClick={() => go(s.id)}
                     className="w-full rounded-xl border border-antique-gold/20 px-4 py-3 text-left"
                   >
-                    <span className="block font-display text-base text-warm-ivory">{s.en}</span>
-                    <span lang="te" className="block font-telugu text-sm text-antique-gold">{s.te}</span>
+                    <span className="block font-display text-base text-temple-stone">{s.en}</span>
+                    <span lang="te" className="block font-telugu text-sm text-rose">{s.te}</span>
                   </button>
                 </li>
               ))}

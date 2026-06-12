@@ -21,6 +21,14 @@
   --color-earth-brown: #68452f;
   --color-moon-cream: #fff9ed;
 
+  /* Soft blush & gold (light theme) */
+  --color-cream: #fdf6ec;
+  --color-blush: #f8e3e6;
+  --color-blush-deep: #f0cdd3;
+  --color-rose: #c27c88;
+  --color-rose-soft: #d99aa4;
+  --color-rose-gold: #c2a06a;
+
   --font-display: var(--font-cormorant), Georgia, serif;
   --font-display-alt: var(--font-playfair), Georgia, serif;
   --font-carved: var(--font-cinzel), Georgia, serif;
@@ -35,8 +43,8 @@
 
 /* ── Base ── */
 :root {
-  --bg: #f8f0df;
-  --fg: #3a211d;
+  --bg: #fdf6ec;
+  --fg: #5e1826;
   color-scheme: light;
 }
 

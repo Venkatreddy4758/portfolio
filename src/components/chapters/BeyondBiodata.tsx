@@ -14,11 +14,11 @@ export function BeyondBiodata() {
   const candid = photoByType("candid");
 
   return (
-    <section className="grain relative bg-temple-stone py-28">
+    <section className="grain relative bg-blush py-28">
       <div className="mx-auto max-w-4xl px-6 text-center">
         <SectionDivider className="mb-10" />
         <motion.h2
-          className="font-display text-4xl text-champagne-gold md:text-5xl"
+          className="font-display text-4xl text-royal-maroon md:text-5xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-15%" }}
@@ -31,7 +31,7 @@ export function BeyondBiodata() {
           {c.lines.map((line, i) => (
             <div key={i}>
               <motion.p
-                className={`mx-auto max-w-2xl font-display leading-snug text-warm-ivory ${i === 0 ? "text-2xl md:text-4xl" : "text-xl md:text-2xl text-warm-ivory/85"}`}
+                className={`mx-auto max-w-2xl font-display leading-snug text-temple-stone ${i === 0 ? "text-2xl md:text-4xl" : "text-xl md:text-2xl text-temple-stone/85"}`}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-20%" }}

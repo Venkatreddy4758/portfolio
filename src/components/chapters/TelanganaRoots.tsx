@@ -20,18 +20,18 @@ export function TelanganaRoots() {
   const y = useTransform(scrollYProgress, [0, 1], [-40, 40]);
 
   return (
-    <section ref={ref} className="relative overflow-hidden py-28" style={{ background: "linear-gradient(180deg, #68452f 0%, #4d3220 60%, #3a211d 100%)" }}>
+    <section ref={ref} className="relative overflow-hidden py-28" style={{ background: "linear-gradient(180deg, #f8e3e6 0%, #f6e9d8 55%, #f0cdd3 100%)" }}>
       {photo && (
         <motion.div style={{ y }} className="absolute inset-0 opacity-25">
           <Portrait photo={photo} sizes="100vw" />
         </motion.div>
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-temple-stone via-temple-stone/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-blush via-blush/40 to-transparent" />
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
-        <h2 className="font-display text-4xl text-champagne-gold md:text-6xl">{c.title}</h2>
-        <p className="mx-auto mt-6 max-w-xl font-body text-lg leading-relaxed text-warm-ivory/85">{c.body}</p>
-        <p className="mt-8 font-carved text-xs uppercase tracking-[0.25em] text-antique-gold">
+        <h2 className="font-display text-4xl text-royal-maroon md:text-6xl">{c.title}</h2>
+        <p className="mx-auto mt-6 max-w-xl font-body text-lg leading-relaxed text-temple-stone/85">{c.body}</p>
+        <p className="mt-8 font-carved text-xs uppercase tracking-[0.25em] text-rose">
           {profile.family.nativePlace}
         </p>
       </div>

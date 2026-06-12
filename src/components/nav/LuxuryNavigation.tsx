@@ -37,7 +37,7 @@ export function LuxuryNavigation({ onSecret }: { onSecret?: () => void }) {
       } ${hidden ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}`}
       style={{
         background: condensed
-          ? "linear-gradient(to bottom, rgba(58,33,29,0.82), rgba(58,33,29,0))"
+          ? "linear-gradient(to bottom, rgba(253,246,236,0.9), rgba(253,246,236,0))"
           : "transparent",
         backdropFilter: condensed ? "blur(8px)" : "none",
       }}
@@ -48,7 +48,7 @@ export function LuxuryNavigation({ onSecret }: { onSecret?: () => void }) {
       </span>
 
       <nav aria-label="Sections">
-        <ul className="flex items-center gap-1 rounded-full border border-antique-gold/25 bg-temple-stone/30 px-2 py-1.5">
+        <ul className="flex items-center gap-1 rounded-full border border-antique-gold/25 bg-blush/30 px-2 py-1.5">
           {navSections.map((s) => {
             const isActive = active === s.id;
             return (
@@ -60,7 +60,7 @@ export function LuxuryNavigation({ onSecret }: { onSecret?: () => void }) {
                 >
                   <span
                     className={`font-carved text-[11px] uppercase tracking-[0.16em] transition-colors ${
-                      isActive ? "text-champagne-gold" : "text-warm-ivory/55 group-hover:text-warm-ivory"
+                      isActive ? "text-royal-maroon" : "text-temple-stone/55 group-hover:text-temple-stone"
                     }`}
                   >
                     {s.en}
@@ -68,7 +68,7 @@ export function LuxuryNavigation({ onSecret }: { onSecret?: () => void }) {
                   {/* Telugu label appears on hover */}
                   <span
                     lang="te"
-                    className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 whitespace-nowrap pt-1 font-telugu text-[11px] text-antique-gold opacity-0 transition-opacity group-hover:opacity-100"
+                    className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 whitespace-nowrap pt-1 font-telugu text-[11px] text-rose opacity-0 transition-opacity group-hover:opacity-100"
                   >
                     {s.te}
                   </span>

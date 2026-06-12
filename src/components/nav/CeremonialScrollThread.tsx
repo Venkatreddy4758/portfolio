@@ -40,14 +40,14 @@ export function CeremonialScrollThread() {
             >
               <span
                 className={`h-2 w-2 rotate-45 transition-all duration-500 ${
-                  reached ? "bg-champagne-gold" : "bg-antique-gold/30"
+                  reached ? "bg-rose-gold" : "bg-antique-gold/30"
                 } ${isActive ? "scale-150" : ""}`}
               />
               <span
                 lang={lang === "te" ? "te" : undefined}
                 className={`absolute right-full mr-3 whitespace-nowrap text-right text-[10px] tracking-[0.15em] transition-opacity ${
                   isActive ? "opacity-100" : "opacity-0 group-hover:opacity-70"
-                } ${lang === "te" ? "font-telugu text-antique-gold" : "font-carved uppercase text-champagne-gold"}`}
+                } ${lang === "te" ? "font-telugu text-rose" : "font-carved uppercase text-royal-maroon"}`}
               >
                 {label(s, lang)}
               </span>

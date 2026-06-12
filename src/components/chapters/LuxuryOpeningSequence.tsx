@@ -54,7 +54,7 @@ export function LuxuryOpeningSequence({ onDone }: { onDone?: () => void }) {
     <AnimatePresence>
       {show && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-warm-ivory"
+          className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-cream"
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
           role="dialog"
@@ -64,14 +64,14 @@ export function LuxuryOpeningSequence({ onDone }: { onDone?: () => void }) {
           {!reduced && (
             <>
               <motion.div
-                className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-temple-stone to-royal-maroon"
+                className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-rose-soft to-blush-deep"
                 initial={{ x: 0 }}
                 animate={{ x: stage >= 1 ? "-100%" : 0 }}
                 transition={{ duration: 1.8, ease: [0.65, 0, 0.35, 1] }}
                 style={{ boxShadow: "inset -20px 0 40px rgba(0,0,0,0.4)" }}
               />
               <motion.div
-                className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-temple-stone to-royal-maroon"
+                className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-rose-soft to-blush-deep"
                 initial={{ x: 0 }}
                 animate={{ x: stage >= 1 ? "100%" : 0 }}
                 transition={{ duration: 1.8, ease: [0.65, 0, 0.35, 1] }}
@@ -134,7 +134,7 @@ export function LuxuryOpeningSequence({ onDone }: { onDone?: () => void }) {
                 <button
                   onClick={finish}
                   data-cursor="open"
-                  className="rounded-full border border-royal-maroon/40 px-6 py-2.5 font-carved text-xs uppercase tracking-[0.25em] text-royal-maroon transition-colors hover:bg-royal-maroon hover:text-warm-ivory"
+                  className="rounded-full border border-royal-maroon/40 px-6 py-2.5 font-carved text-xs uppercase tracking-[0.25em] text-royal-maroon transition-colors hover:bg-cream hover:text-temple-stone"
                 >
                   {c.cta}
                 </button>

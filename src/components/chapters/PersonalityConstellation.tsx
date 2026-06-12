@@ -17,13 +17,13 @@ export function PersonalityConstellation() {
   const traits = p.traits;
 
   return (
-    <section id="personality" className="relative overflow-hidden bg-silk-plum py-28">
+    <section id="personality" className="relative overflow-hidden bg-cream py-28">
       {/* faint star field */}
       <div aria-hidden className="absolute inset-0 opacity-40">
         {Array.from({ length: 40 }).map((_, i) => (
           <span
             key={i}
-            className="absolute rounded-full bg-champagne-gold"
+            className="absolute rounded-full bg-rose-gold"
             style={{
               left: `${(i * 53) % 100}%`,
               top: `${(i * 37) % 100}%`,
@@ -36,7 +36,7 @@ export function PersonalityConstellation() {
       </div>
 
       <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <h2 className="font-display text-4xl text-champagne-gold md:text-5xl">{p.title}</h2>
+        <h2 className="font-display text-4xl text-royal-maroon md:text-5xl">{p.title}</h2>
 
         <div className="relative mx-auto mt-16 aspect-square w-full max-w-xl">
           {/* central portrait */}
@@ -76,8 +76,8 @@ export function PersonalityConstellation() {
                   transition={{ duration: 0.5, delay: i * 0.06 }}
                   className={`whitespace-nowrap rounded-full border px-3 py-1.5 text-xs transition-all ${
                     isActive
-                      ? "scale-110 border-champagne-gold bg-champagne-gold text-temple-stone"
-                      : "border-antique-gold/40 bg-temple-stone/40 text-warm-ivory/80"
+                      ? "scale-110 border-champagne-gold bg-rose-gold text-temple-stone"
+                      : "border-antique-gold/40 bg-blush/40 text-temple-stone/80"
                   } ${lang === "te" ? "font-telugu" : "font-carved tracking-[0.12em]"}`}
                 >
                   {trait}

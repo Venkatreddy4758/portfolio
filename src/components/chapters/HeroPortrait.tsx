@@ -29,7 +29,7 @@ export function HeroPortrait() {
       className="grain relative flex min-h-screen items-center justify-center overflow-hidden"
       style={{
         background:
-          "radial-gradient(120% 90% at 50% 10%, #741f3a 0%, #5e1826 45%, #3a211d 100%)",
+          "radial-gradient(120% 90% at 50% 8%, #fdf6ec 0%, #f8e3e6 48%, #f0cdd3 100%)",
       }}
     >
       {/* drifting petals + dust */}
@@ -38,18 +38,18 @@ export function HeroPortrait() {
       <motion.div style={{ opacity }} className="relative z-10 flex w-full max-w-6xl flex-col items-center px-6 py-24 lg:flex-row lg:justify-between lg:gap-12">
         {/* Name block */}
         <motion.div style={{ y: yText }} className="text-center lg:flex-1 lg:text-left">
-          <p className="mb-5 font-carved text-[11px] uppercase tracking-[0.35em] text-antique-gold">
+          <p className="mb-5 font-carved text-[11px] uppercase tracking-[0.35em] text-rose">
             {hero.eyebrow}
           </p>
-          <h1 className="font-display text-5xl leading-[0.95] text-warm-ivory text-gold-edge sm:text-6xl xl:text-8xl">
+          <h1 className="font-display text-5xl leading-[0.95] text-temple-stone text-gold-edge sm:text-6xl xl:text-8xl">
             Venkat Reddy
-            <span className="mt-1 block text-antique-gold">Regulapally</span>
+            <span className="mt-1 block text-rose">Regulapally</span>
           </h1>
-          <p lang="te" className="mt-4 font-telugu text-2xl text-champagne-gold md:text-3xl">
+          <p lang="te" className="mt-4 font-telugu text-2xl text-royal-maroon md:text-3xl">
             {profile.teluguName}
           </p>
           <div className="gold-rule my-7 w-40 lg:mx-0 mx-auto" />
-          <div className="space-y-1 font-body text-sm text-warm-ivory/75 md:text-base">
+          <div className="space-y-1 font-body text-sm text-temple-stone/75 md:text-base">
             <p>{hero.tagline1}</p>
             <p>{hero.tagline2}</p>
             <p>{hero.tagline3}</p>
@@ -62,7 +62,7 @@ export function HeroPortrait() {
           <TempleArchFrame tone="gold" className="mx-auto aspect-[3/4] w-full max-w-[360px]">
             <div className="absolute inset-[6%] overflow-hidden rounded-t-[40%]">
               <Portrait photo={photo} priority sizes="(max-width: 1024px) 80vw, 360px" />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-temple-stone/50 to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cream/40 to-transparent" />
             </div>
           </TempleArchFrame>
         </motion.div>
@@ -71,7 +71,7 @@ export function HeroPortrait() {
       {/* scroll indicator */}
       <motion.button
         onClick={() => scrollToId("story")}
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-warm-ivory/60"
+        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-temple-stone/60"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         aria-label="Scroll to begin"
@@ -102,7 +102,7 @@ function Petals() {
               top: "-5%",
               width: size,
               height: size * 1.4,
-              background: i % 3 === 0 ? "#B95872" : "#C5A15A",
+              background: i % 3 === 0 ? "#C27C88" : "#C2A06A",
               opacity: 0.5,
             }}
             animate={{ y: ["-5vh", "105vh"], x: [0, 30, -20, 10], rotate: [0, 180, 360] }}

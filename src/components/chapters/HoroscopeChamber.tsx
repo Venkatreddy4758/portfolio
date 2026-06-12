@@ -27,13 +27,13 @@ export function HoroscopeChamber() {
   const canShow = privacy.showHoroscopePublicly && entries.length > 0;
 
   return (
-    <section className="relative overflow-hidden bg-emerald-depth py-24">
+    <section className="relative overflow-hidden bg-blush py-24">
       <div aria-hidden className="pointer-events-none absolute left-1/2 top-10 -translate-x-1/2 opacity-20">
         <LotusMedallion size={220} tone="#C5A15A" open />
       </div>
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
-        <h2 className="font-display text-4xl text-champagne-gold md:text-5xl">{c.title}</h2>
+        <h2 className="font-display text-4xl text-royal-maroon md:text-5xl">{c.title}</h2>
 
         {canShow ? (
           <div className="mx-auto mt-12 grid max-w-xl grid-cols-2 gap-4">
@@ -44,22 +44,22 @@ export function HoroscopeChamber() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
-                className="rounded-xl border border-antique-gold/30 bg-temple-stone/40 p-4"
+                className="rounded-xl border border-antique-gold/30 bg-blush/40 p-4"
               >
-                <p className={`text-[11px] uppercase tracking-[0.18em] text-antique-gold ${lang === "te" ? "font-telugu normal-case" : "font-carved"}`}>
+                <p className={`text-[11px] uppercase tracking-[0.18em] text-rose ${lang === "te" ? "font-telugu normal-case" : "font-carved"}`}>
                   {lang === "te" ? fieldLabels[key]?.te : fieldLabels[key]?.en}
                 </p>
-                <p className="mt-1 font-display text-xl text-warm-ivory">{value}</p>
+                <p className="mt-1 font-display text-xl text-temple-stone">{value}</p>
               </motion.div>
             ))}
           </div>
         ) : (
           <div className="mx-auto mt-10 max-w-lg">
-            <p className="font-body text-warm-ivory/75">{c.gatedNote}</p>
+            <p className="font-body text-temple-stone/75">{c.gatedNote}</p>
             <button
               onClick={() => scrollToId("contact")}
               data-cursor="open"
-              className="mt-7 rounded-full border border-antique-gold/50 px-6 py-2.5 font-carved text-xs uppercase tracking-[0.2em] text-champagne-gold transition-colors hover:bg-antique-gold hover:text-temple-stone"
+              className="mt-7 rounded-full border border-antique-gold/50 px-6 py-2.5 font-carved text-xs uppercase tracking-[0.2em] text-royal-maroon transition-colors hover:bg-antique-gold hover:text-temple-stone"
             >
               {c.reveal}
             </button>

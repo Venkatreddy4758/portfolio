@@ -2,7 +2,6 @@
 import { GsapProvider } from "./GsapProvider";
 import { LenisProvider } from "./LenisProvider";
 import { AudioProvider } from "./AudioProvider";
-import { CustomCursor } from "./CustomCursor";
 import { LanguageProvider } from "@/lib/LanguageProvider";
 import { privacy } from "@/config/privacy";
 
@@ -13,7 +12,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <AudioProvider>
         <GsapProvider>
           <LenisProvider>
-            <CustomCursor />
             <div className={privacy.blockImageDownload ? "no-save" : undefined}>
               {children}
             </div>

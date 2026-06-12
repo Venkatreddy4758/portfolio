@@ -80,11 +80,11 @@ export function MuseumGallery() {
   };
 
   return (
-    <section id="gallery" className="relative bg-silk-plum py-28">
+    <section id="gallery" className="relative bg-cream py-28">
       <div className="mx-auto max-w-6xl px-6">
         <SectionDivider className="mb-6" />
-        <h2 className="text-center font-display text-4xl text-champagne-gold md:text-5xl">{g.title}</h2>
-        <p className="mt-3 text-center font-body text-warm-ivory/65">{g.subtitle}</p>
+        <h2 className="text-center font-display text-4xl text-royal-maroon md:text-5xl">{g.title}</h2>
+        <p className="mt-3 text-center font-body text-temple-stone/65">{g.subtitle}</p>
 
         {/* filters */}
         <div className="mt-10 flex flex-wrap justify-center gap-2">
@@ -94,7 +94,7 @@ export function MuseumGallery() {
               onClick={() => { setFilter(cat); }}
               data-cursor="open"
               className={`rounded-full border px-4 py-1.5 font-carved text-[11px] uppercase tracking-[0.15em] transition-all ${
-                filter === cat ? "border-champagne-gold bg-champagne-gold text-temple-stone" : "border-antique-gold/40 text-warm-ivory/70 hover:text-warm-ivory"
+                filter === cat ? "border-champagne-gold bg-rose-gold text-temple-stone" : "border-antique-gold/40 text-temple-stone/70 hover:text-temple-stone"
               }`}
             >
               {cat === "all" ? g.all : cat}
@@ -117,10 +117,10 @@ export function MuseumGallery() {
               className={`group relative overflow-hidden rounded-xl ring-1 ring-antique-gold/20 ${filter === "all" ? spans[i % spans.length] : ""}`}
             >
               <Portrait photo={p} sizes="(max-width: 768px) 45vw, 25vw" />
-              <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-temple-stone/70 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cream/90 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <span className="pointer-events-none absolute bottom-3 left-3 right-3 translate-y-2 text-left opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                <span className="block font-display text-sm text-warm-ivory">{p.title}</span>
-                <span lang="te" className="block font-telugu text-xs text-antique-gold">{p.titleTelugu}</span>
+                <span className="block font-display text-sm text-temple-stone">{p.title}</span>
+                <span lang="te" className="block font-telugu text-xs text-rose">{p.titleTelugu}</span>
               </span>
             </motion.button>
           ))}
@@ -142,13 +142,13 @@ export function MuseumGallery() {
             onTouchStart={onTouchStart}
             onTouchEnd={onTouchEnd}
           >
-            <button ref={closeRef} onClick={() => setOpenIndex(null)} aria-label={g.close} className="absolute right-4 top-4 z-10 rounded-full border border-warm-ivory/30 p-2 text-warm-ivory/80 hover:text-warm-ivory">
+            <button ref={closeRef} onClick={() => setOpenIndex(null)} aria-label={g.close} className="absolute right-4 top-4 z-10 rounded-full border border-royal-maroon/30 p-2 text-temple-stone/80 hover:text-temple-stone">
               <X size={20} />
             </button>
-            <button onClick={() => go(-1)} aria-label="Previous" className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-warm-ivory/20 p-2 text-warm-ivory/70 hover:text-warm-ivory sm:left-6">
+            <button onClick={() => go(-1)} aria-label="Previous" className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-royal-maroon/20 p-2 text-temple-stone/70 hover:text-temple-stone sm:left-6">
               <ChevronLeft size={26} />
             </button>
-            <button onClick={() => go(1)} aria-label="Next" className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-warm-ivory/20 p-2 text-warm-ivory/70 hover:text-warm-ivory sm:right-6">
+            <button onClick={() => go(1)} aria-label="Next" className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-royal-maroon/20 p-2 text-temple-stone/70 hover:text-temple-stone sm:right-6">
               <ChevronRight size={26} />
             </button>
 
@@ -163,9 +163,9 @@ export function MuseumGallery() {
                 <Portrait photo={active} sizes="80vw" />
               </div>
               <figcaption className="mt-4 text-center">
-                <p className="font-display text-xl text-warm-ivory">{active.title}</p>
-                <p lang="te" className="font-telugu text-sm text-antique-gold">{active.titleTelugu}</p>
-                <p className="mt-1 font-carved text-[11px] uppercase tracking-[0.2em] text-warm-ivory/50">
+                <p className="font-display text-xl text-temple-stone">{active.title}</p>
+                <p lang="te" className="font-telugu text-sm text-rose">{active.titleTelugu}</p>
+                <p className="mt-1 font-carved text-[11px] uppercase tracking-[0.2em] text-temple-stone/50">
                   {openIndex! + 1} {g.of} {visible.length}
                   {active.location ? ` · ${active.location}` : ""}
                 </p>

@@ -27,9 +27,9 @@ export function JourneyMap() {
     .join(" ");
 
   return (
-    <section className="relative bg-temple-stone py-24" ref={ref}>
+    <section className="relative bg-blush py-24" ref={ref}>
       <div className="mx-auto max-w-5xl px-6">
-        <h2 className="mb-12 text-center font-display text-4xl text-champagne-gold md:text-5xl">{j.title}</h2>
+        <h2 className="mb-12 text-center font-display text-4xl text-royal-maroon md:text-5xl">{j.title}</h2>
 
         <div className="relative">
           <svg viewBox="0 0 100 80" className="w-full" preserveAspectRatio="xMidYMid meet">
@@ -65,7 +65,7 @@ export function JourneyMap() {
                   animate={inView ? { scale: 1 } : {}}
                   transition={{ delay: 0.4 + i * 0.5, duration: 0.5 }}
                 />
-                <text x={p.x} y={p.y - 4} textAnchor="middle" fontSize="2.6" fill="#F8F0DF" fontFamily="Cinzel, serif">
+                <text x={p.x} y={p.y - 4} textAnchor="middle" fontSize="2.6" fill="#5E1826" fontFamily="Cinzel, serif">
                   {j.stops[i].place}
                 </text>
               </g>
@@ -80,9 +80,9 @@ export function JourneyMap() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p lang="te" className="font-telugu text-2xl text-antique-gold">{j.stops[active].word}</p>
-            <p className="mt-2 font-display text-2xl text-champagne-gold">{j.stops[active].place}</p>
-            <p className="mt-2 font-body text-warm-ivory/75">{j.stops[active].line}</p>
+            <p lang="te" className="font-telugu text-2xl text-rose">{j.stops[active].word}</p>
+            <p className="mt-2 font-display text-2xl text-royal-maroon">{j.stops[active].place}</p>
+            <p className="mt-2 font-body text-temple-stone/75">{j.stops[active].line}</p>
           </motion.div>
 
           {/* stop selector */}
@@ -92,7 +92,7 @@ export function JourneyMap() {
                 key={i}
                 onClick={() => setActive(i)}
                 aria-label={s.place}
-                className={`h-2 w-2 rotate-45 transition-all ${active === i ? "scale-150 bg-champagne-gold" : "bg-antique-gold/40"}`}
+                className={`h-2 w-2 rotate-45 transition-all ${active === i ? "scale-150 bg-rose-gold" : "bg-antique-gold/40"}`}
               />
             ))}
           </div>

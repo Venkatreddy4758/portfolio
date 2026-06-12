@@ -37,17 +37,17 @@ export function InquiryForm() {
 
   if (status === "ok") {
     return (
-      <div className="rounded-2xl border border-antique-gold/30 bg-warm-ivory/5 p-8 text-center">
-        <p className="font-display text-2xl text-champagne-gold">{c.formSuccess}</p>
+      <div className="rounded-2xl border border-antique-gold/30 bg-rose/5 p-8 text-center">
+        <p className="font-display text-2xl text-royal-maroon">{c.formSuccess}</p>
       </div>
     );
   }
 
-  const field = "w-full rounded-lg border border-antique-gold/30 bg-temple-stone/40 px-4 py-3 text-warm-ivory placeholder:text-warm-ivory/40 focus:border-antique-gold focus:outline-none";
+  const field = "w-full rounded-lg border border-antique-gold/30 bg-blush/40 px-4 py-3 text-temple-stone placeholder:text-temple-stone/40 focus:border-antique-gold focus:outline-none";
 
   return (
     <form onSubmit={submit} className="space-y-3">
-      <h3 className={`text-center text-xl text-champagne-gold ${lang === "te" ? "font-telugu" : "font-display"}`}>{c.inquiryTitle}</h3>
+      <h3 className={`text-center text-xl text-royal-maroon ${lang === "te" ? "font-telugu" : "font-display"}`}>{c.inquiryTitle}</h3>
       {/* honeypot (hidden) */}
       <input type="text" name="company" value={form.company} onChange={set("company")} tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
       <input className={field} placeholder={c.formName} value={form.name} onChange={set("name")} required aria-label={c.formName} />

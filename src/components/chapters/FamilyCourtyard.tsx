@@ -29,8 +29,8 @@ export function FamilyCourtyard() {
   ];
 
   return (
-    <section id="family" className="grain relative overflow-hidden py-10" style={{ background: "radial-gradient(120% 90% at 50% 0%, #d6b58a 0%, #b9986a 35%, #68452f 100%)" }}>
-      <ToranamBorder count={16} tone="#174E48" />
+    <section id="family" className="grain relative overflow-hidden py-10" style={{ background: "radial-gradient(120% 90% at 50% 0%, #fdf6ec 0%, #f6e9d8 45%, #f0cdd3 100%)" }}>
+      <ToranamBorder count={16} tone="#C27C88" />
 
       <div className="relative mx-auto max-w-6xl px-6 py-16">
         {/* flanking pillars (desktop) */}
@@ -49,7 +49,7 @@ export function FamilyCourtyard() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-15%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative aspect-[4/3] w-full max-w-xl overflow-hidden rounded-2xl shadow-2xl ring-4 ring-warm-ivory/60"
+              className="relative aspect-[4/3] w-full max-w-xl overflow-hidden rounded-2xl shadow-2xl ring-4 ring-rose-gold/60"
             >
               <Portrait photo={photo} sizes="(max-width: 768px) 90vw, 36rem" />
             </motion.div>
@@ -64,7 +64,7 @@ export function FamilyCourtyard() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
-                className="rounded-lg border border-temple-stone/30 bg-warm-ivory/70 p-4 text-center backdrop-blur-sm"
+                className="rounded-lg border border-temple-stone/30 bg-rose/70 p-4 text-center backdrop-blur-sm"
               >
                 <p className="font-display text-lg text-temple-stone">{m.name}</p>
                 <p className="mt-0.5 font-carved text-[10px] uppercase tracking-[0.15em] text-earth-brown">{m.role}</p>

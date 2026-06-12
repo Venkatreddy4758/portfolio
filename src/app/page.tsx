@@ -23,11 +23,9 @@ import { PartnerExpectations } from "@/components/chapters/PartnerExpectations";
 import { TeluguPoetryInterlude } from "@/components/chapters/TeluguPoetryInterlude";
 import { CinematicFilmstrip } from "@/components/media/CinematicFilmstrip";
 import { MuseumGallery } from "@/components/media/MuseumGallery";
-import { ScrollRevealPhoto } from "@/components/media/ScrollRevealPhoto";
 import { PrivateContactPanel } from "@/components/contact/PrivateContactPanel";
 import { FinalBlessing } from "@/components/chapters/FinalBlessing";
 import { SecretLotusMessage, SecretBlessing } from "@/components/contact/SecretLotusMessage";
-import { photoByType } from "@/data/photos";
 
 export default function Home() {
   const [secret, setSecret] = useState(false);
@@ -38,21 +36,18 @@ export default function Home() {
       <LuxuryNavigation onSecret={() => setSecret(true)} />
       <CeremonialScrollThread />
 
-      <main className="bg-royal-maroon text-warm-ivory">
+      <main className="bg-cream text-temple-stone">
         <HeroPortrait />
         <StickyPhotoNarrative />
         <ProfileMedallion />
         <BeyondBiodata />
-        <TeluguPoetryInterlude index={3} tone="var(--color-temple-stone)" />
-        <div className="bg-temple-stone">
-          <ScrollRevealPhoto photo={photoByType("traditional")!} align="center" />
-        </div>
+        <TeluguPoetryInterlude index={3} tone="var(--color-blush)" />
         <JourneyMap />
         <EducationBook />
         <ProfessionalChapter />
         <FamilyCourtyard />
         <TelanganaRoots />
-        <TeluguPoetryInterlude index={1} tone="var(--color-silk-plum)" />
+        <TeluguPoetryInterlude index={1} tone="var(--color-blush-deep)" />
         <PersonalityConstellation />
         <DayInLifeTimeline />
         <HoroscopeChamber />
@@ -60,10 +55,10 @@ export default function Home() {
         <PartnerExpectations />
         <CinematicFilmstrip />
         <MuseumGallery />
-        <TeluguPoetryInterlude index={2} tone="var(--color-deep-wine)" />
+        <TeluguPoetryInterlude index={2} tone="var(--color-blush)" />
         <PrivateContactPanel />
         {/* hidden lotus seal — a tasteful secret interaction */}
-        <div className="bg-temple-stone">
+        <div className="bg-blush">
           <SecretLotusMessage />
         </div>
         <FinalBlessing />

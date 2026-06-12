@@ -39,7 +39,7 @@ export function ShareCard({ onClose }: { onClose?: () => void }) {
   }
 
   return (
-    <div className="mx-auto max-w-sm rounded-3xl border border-antique-gold/40 bg-warm-ivory p-8 text-center text-temple-stone">
+    <div className="mx-auto max-w-sm rounded-3xl border border-antique-gold/40 bg-rose p-8 text-center text-temple-stone">
       <p className="font-carved text-xs uppercase tracking-[0.25em] text-earth-brown">{c.shareProfile}</p>
       <p className="mt-1 font-display text-2xl text-royal-maroon">{profile.displayName}</p>
 
@@ -57,11 +57,11 @@ export function ShareCard({ onClose }: { onClose?: () => void }) {
       </div>
 
       <div className="mt-6 flex gap-2">
-        <button onClick={copy} data-cursor="open" className="flex flex-1 items-center justify-center gap-2 rounded-full border border-royal-maroon/40 py-2.5 font-carved text-[11px] uppercase tracking-[0.15em] text-royal-maroon hover:bg-royal-maroon hover:text-warm-ivory">
+        <button onClick={copy} data-cursor="open" className="flex flex-1 items-center justify-center gap-2 rounded-full border border-royal-maroon/40 py-2.5 font-carved text-[11px] uppercase tracking-[0.15em] text-royal-maroon hover:bg-cream hover:text-temple-stone">
           {copied ? <Check size={14} /> : <Copy size={14} />}
           {copied ? "Copied" : "Copy link"}
         </button>
-        <button onClick={nativeShare} data-cursor="open" className="flex items-center justify-center gap-2 rounded-full bg-royal-maroon px-5 py-2.5 font-carved text-[11px] uppercase tracking-[0.15em] text-warm-ivory">
+        <button onClick={nativeShare} data-cursor="open" className="flex items-center justify-center gap-2 rounded-full bg-cream px-5 py-2.5 font-carved text-[11px] uppercase tracking-[0.15em] text-temple-stone">
           <Share2 size={14} /> Share
         </button>
       </div>

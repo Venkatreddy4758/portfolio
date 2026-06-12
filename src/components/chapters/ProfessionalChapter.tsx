@@ -23,7 +23,7 @@ export function ProfessionalChapter() {
   ];
 
   return (
-    <section id="career" className="relative overflow-hidden bg-temple-stone py-28">
+    <section id="career" className="relative overflow-hidden bg-blush py-28">
       {/* subtle test-flow lines */}
       <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.07]">
         <pattern id="flow" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -36,8 +36,8 @@ export function ProfessionalChapter() {
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-2">
         <div>
           <SectionDivider className="mb-6 justify-start" />
-          <h2 className="font-display text-4xl text-champagne-gold md:text-5xl">{c.title}</h2>
-          <p className="mt-5 max-w-md font-body text-lg leading-relaxed text-warm-ivory/80">{c.body}</p>
+          <h2 className="font-display text-4xl text-royal-maroon md:text-5xl">{c.title}</h2>
+          <p className="mt-5 max-w-md font-body text-lg leading-relaxed text-temple-stone/80">{c.body}</p>
 
           <div className="mt-10 grid grid-cols-2 gap-4">
             {facts.map((f) => (
@@ -47,10 +47,10 @@ export function ProfessionalChapter() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="rounded-xl border border-antique-gold/25 bg-warm-ivory/[0.03] p-4 backdrop-blur-sm"
+                className="rounded-xl border border-antique-gold/25 bg-rose/[0.03] p-4 backdrop-blur-sm"
               >
-                <p className={`text-[11px] uppercase tracking-[0.2em] text-antique-gold ${lang === "te" ? "font-telugu normal-case" : "font-carved"}`}>{f.k}</p>
-                <p className="mt-1 font-display text-xl text-warm-ivory">{f.v}</p>
+                <p className={`text-[11px] uppercase tracking-[0.2em] text-rose ${lang === "te" ? "font-telugu normal-case" : "font-carved"}`}>{f.k}</p>
+                <p className="mt-1 font-display text-xl text-temple-stone">{f.v}</p>
               </motion.div>
             ))}
           </div>
@@ -65,7 +65,7 @@ export function ProfessionalChapter() {
             className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-2xl ring-1 ring-antique-gold/30"
           >
             <Portrait photo={photo} sizes="(max-width: 1024px) 80vw, 24rem" />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-temple-stone/40 to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cream/60 to-transparent" />
           </motion.div>
         )}
       </div>

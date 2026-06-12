@@ -27,12 +27,12 @@ export function TeluguPoetryInterlude({
       <div className="flex flex-col items-center gap-6">
         <LotusMedallion size={34} tone="#C5A15A" open={inView} />
         <div className="mask-reveal max-w-2xl" data-shown={inView} style={{ ["--reveal-dur" as string]: "1.4s" }}>
-          <p lang="te" className="font-telugu text-2xl leading-relaxed text-champagne-gold md:text-3xl">
+          <p lang="te" className="font-telugu text-2xl leading-relaxed text-royal-maroon md:text-3xl">
             {poem.te}
           </p>
         </div>
         <motion.p
-          className="max-w-md font-body text-sm italic text-warm-ivory/55"
+          className="max-w-md font-body text-sm italic text-temple-stone/55"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 1, delay: 0.8 }}

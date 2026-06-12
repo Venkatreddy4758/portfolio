@@ -24,7 +24,7 @@ export function ProfileMedallion() {
   };
 
   return (
-    <section className="relative bg-deep-wine py-24">
+    <section className="relative bg-blush-deep py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionDivider className="mb-14" label={lang === "te" ? "వివరాలు" : "At a Glance"} />
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
@@ -47,8 +47,8 @@ export function ProfileMedallion() {
                     return <circle key={k} cx={50 + Math.cos(a) * 47} cy={50 + Math.sin(a) * 47} r="0.8" fill="#E4C98E" />;
                   })}
                 </svg>
-                <div className="absolute inset-[14%] grid place-items-center rounded-full bg-gradient-to-br from-royal-maroon to-temple-stone ring-1 ring-antique-gold/40">
-                  <span className="font-display text-base leading-tight text-champagne-gold text-center px-1">
+                <div className="absolute inset-[14%] grid place-items-center rounded-full bg-gradient-to-br from-rose-soft to-blush-deep ring-1 ring-antique-gold/40">
+                  <span className="font-display text-base leading-tight text-royal-maroon text-center px-1">
                     {m.key === "born" ? "★" : ""}
                     {m.key === "height" ? "↥" : ""}
                     {m.key === "native" ? "⌂" : ""}
@@ -58,10 +58,10 @@ export function ProfileMedallion() {
                   </span>
                 </div>
               </div>
-              <p className={`mt-4 text-center text-[11px] uppercase tracking-[0.2em] text-antique-gold ${lang === "te" ? "font-telugu normal-case tracking-normal text-sm" : "font-carved"}`}>
+              <p className={`mt-4 text-center text-[11px] uppercase tracking-[0.2em] text-rose ${lang === "te" ? "font-telugu normal-case tracking-normal text-sm" : "font-carved"}`}>
                 {m.label}
               </p>
-              <p className="mt-1 text-center font-body text-sm text-warm-ivory/90">{values[m.key]}</p>
+              <p className="mt-1 text-center font-body text-sm text-temple-stone/90">{values[m.key]}</p>
             </motion.div>
           ))}
         </div>

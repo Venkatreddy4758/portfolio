@@ -16,7 +16,7 @@ export function LanguageToggle({ className }: { className?: string }) {
         aria-pressed={lang === "en"}
         data-cursor="open"
         className={`rounded-full px-3 py-1 font-carved text-[11px] tracking-[0.15em] transition-colors ${
-          lang === "en" ? "bg-antique-gold text-temple-stone" : "text-champagne-gold/80"
+          lang === "en" ? "bg-antique-gold text-temple-stone" : "text-royal-maroon/80"
         }`}
       >
         EN
@@ -28,7 +28,7 @@ export function LanguageToggle({ className }: { className?: string }) {
         data-cursor="open"
         lang="te"
         className={`rounded-full px-3 py-1 font-telugu text-[13px] transition-colors ${
-          lang === "te" ? "bg-antique-gold text-temple-stone" : "text-champagne-gold/80"
+          lang === "te" ? "bg-antique-gold text-temple-stone" : "text-royal-maroon/80"
         }`}
       >
         తె

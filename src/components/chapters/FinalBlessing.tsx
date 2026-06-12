@@ -57,14 +57,14 @@ export function FinalBlessing({ onShare }: { onShare?: () => void }) {
         <p lang="te" className="font-telugu text-lg text-deep-wine">{profile.teluguName}</p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <a href="/biodata/print" target="_blank" data-cursor="open" className="rounded-full bg-royal-maroon px-6 py-3 font-carved text-[11px] uppercase tracking-[0.18em] text-warm-ivory">
+          <a href="/biodata/print" target="_blank" data-cursor="open" className="rounded-full bg-cream px-6 py-3 font-carved text-[11px] uppercase tracking-[0.18em] text-temple-stone">
             {content.contact[lang].viewBiodata}
           </a>
-          <button onClick={() => scrollToId("contact")} data-cursor="open" className="rounded-full border border-royal-maroon/50 px-6 py-3 font-carved text-[11px] uppercase tracking-[0.18em] text-royal-maroon hover:bg-royal-maroon hover:text-warm-ivory">
+          <button onClick={() => scrollToId("contact")} data-cursor="open" className="rounded-full border border-royal-maroon/50 px-6 py-3 font-carved text-[11px] uppercase tracking-[0.18em] text-royal-maroon hover:bg-cream hover:text-temple-stone">
             {content.contact[lang].contactFamily}
           </button>
           {onShare && (
-            <button onClick={onShare} data-cursor="open" className="rounded-full border border-royal-maroon/50 px-6 py-3 font-carved text-[11px] uppercase tracking-[0.18em] text-royal-maroon hover:bg-royal-maroon hover:text-warm-ivory">
+            <button onClick={onShare} data-cursor="open" className="rounded-full border border-royal-maroon/50 px-6 py-3 font-carved text-[11px] uppercase tracking-[0.18em] text-royal-maroon hover:bg-cream hover:text-temple-stone">
               {content.contact[lang].shareProfile}
             </button>
           )}

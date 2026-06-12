@@ -38,7 +38,7 @@ export function BiodataDrawer({ open, onClose, onShare }: { open: boolean; onClo
 
   return (
     <div className={`no-print fixed inset-0 z-[70] ${open ? "" : "pointer-events-none"}`} aria-hidden={!open}>
-      <div className={`absolute inset-0 bg-temple-stone/70 transition-opacity duration-500 ${open ? "opacity-100" : "opacity-0"}`} onClick={onClose} />
+      <div className={`absolute inset-0 bg-blush/70 transition-opacity duration-500 ${open ? "opacity-100" : "opacity-0"}`} onClick={onClose} />
       <aside
         role="dialog"
         aria-modal="true"
@@ -100,7 +100,7 @@ export function BiodataDrawer({ open, onClose, onShare }: { open: boolean; onClo
           </section>
 
           <div className="mt-8 flex gap-2">
-            <a href="/biodata/print" target="_blank" className="flex flex-1 items-center justify-center gap-2 rounded-full bg-royal-maroon py-2.5 font-carved text-[11px] uppercase tracking-[0.15em] text-warm-ivory">
+            <a href="/biodata/print" target="_blank" className="flex flex-1 items-center justify-center gap-2 rounded-full bg-cream py-2.5 font-carved text-[11px] uppercase tracking-[0.15em] text-temple-stone">
               <Printer size={14} /> Print / PDF
             </a>
             {onShare && (

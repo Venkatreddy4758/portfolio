@@ -34,9 +34,9 @@ export function CinematicFilmstrip() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-temple-stone py-24">
+    <section className="relative overflow-hidden bg-blush py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="mb-10 text-center font-display text-4xl text-champagne-gold md:text-5xl">{f.title}</h2>
+        <h2 className="mb-10 text-center font-display text-4xl text-royal-maroon md:text-5xl">{f.title}</h2>
       </div>
 
       <div ref={containerRef} className="relative cursor-grab overflow-hidden px-6 active:cursor-grabbing" onWheel={onWheel}>
@@ -53,25 +53,25 @@ export function CinematicFilmstrip() {
               {/* film sprocket holes */}
               <div className="flex justify-between px-1 py-1">
                 {Array.from({ length: 8 }).map((_, k) => (
-                  <span key={k} className="h-2 w-3 rounded-[2px] bg-warm-ivory/15" />
+                  <span key={k} className="h-2 w-3 rounded-[2px] bg-rose/15" />
                 ))}
               </div>
               <div className="grain relative aspect-[3/4] overflow-hidden rounded-sm ring-1 ring-antique-gold/20">
                 <Portrait photo={photo} sizes="296px" />
-                <span className="absolute left-2 top-2 font-carved text-[10px] tracking-[0.2em] text-warm-ivory/70">
+                <span className="absolute left-2 top-2 font-carved text-[10px] tracking-[0.2em] text-temple-stone/70">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
               <div className="flex justify-between px-1 py-1">
                 {Array.from({ length: 8 }).map((_, k) => (
-                  <span key={k} className="h-2 w-3 rounded-[2px] bg-warm-ivory/15" />
+                  <span key={k} className="h-2 w-3 rounded-[2px] bg-rose/15" />
                 ))}
               </div>
-              <p className={`mt-2 text-center text-sm text-antique-gold ${lang === "te" ? "font-telugu" : "font-display"}`}>
+              <p className={`mt-2 text-center text-sm text-rose ${lang === "te" ? "font-telugu" : "font-display"}`}>
                 {f.captions[i] ?? photo.title}
               </p>
               {photo.location && (
-                <p className="text-center font-carved text-[10px] uppercase tracking-[0.2em] text-warm-ivory/45">
+                <p className="text-center font-carved text-[10px] uppercase tracking-[0.2em] text-temple-stone/45">
                   {photo.location}
                 </p>
               )}
@@ -79,10 +79,10 @@ export function CinematicFilmstrip() {
           ))}
         </motion.div>
         {/* edge blur */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-temple-stone to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-temple-stone to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-blush to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-blush to-transparent" />
       </div>
-      <p className="mt-6 text-center font-carved text-[10px] uppercase tracking-[0.25em] text-warm-ivory/40">
+      <p className="mt-6 text-center font-carved text-[10px] uppercase tracking-[0.25em] text-temple-stone/40">
         {lang === "te" ? "లాగండి / స్క్రోల్ చేయండి" : "Drag · Scroll · Swipe"}
       </p>
     </section>
