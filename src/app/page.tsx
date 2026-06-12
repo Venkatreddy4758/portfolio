@@ -7,7 +7,7 @@ import { MobileNavigation } from "@/components/nav/MobileNavigation";
 import { CeremonialScrollThread } from "@/components/nav/CeremonialScrollThread";
 import { LuxuryOpeningSequence } from "@/components/chapters/LuxuryOpeningSequence";
 import { HeroPortrait } from "@/components/chapters/HeroPortrait";
-import { StickyPhotoNarrative } from "@/components/chapters/StickyPhotoNarrative";
+import { StoryReveal } from "@/components/chapters/StoryReveal";
 import { ProfileMedallion } from "@/components/chapters/ProfileMedallion";
 import { BeyondBiodata } from "@/components/chapters/BeyondBiodata";
 import { JourneyMap } from "@/components/chapters/JourneyMap";
@@ -40,7 +40,7 @@ export default function Home() {
 
       <main className="bg-cream text-temple-stone">
         <HeroPortrait />
-        <StickyPhotoNarrative />
+        <StoryReveal />
         <ProfileMedallion />
         <BeyondBiodata />
         <CinematicReveal

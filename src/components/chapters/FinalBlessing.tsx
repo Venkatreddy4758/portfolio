@@ -8,7 +8,7 @@ import { content } from "@/data/content";
 import { photoByType } from "@/data/photos";
 import { useLang } from "@/lib/LanguageProvider";
 import { scrollToId } from "@/components/system/LenisProvider";
-import { LivingPortrait } from "@/components/media/LivingPortrait";
+import { Portrait } from "@/components/media/Portrait";
 import { TempleArchFrame } from "@/components/art/TempleArchFrame";
 import { BrassLamp } from "@/components/art/BrassLamp";
 
@@ -30,9 +30,10 @@ export function FinalBlessing({ onShare }: { onShare?: () => void }) {
           <BrassLamp size={48} />
         </div>
 
-        <TempleArchFrame tone="gold" className="aspect-[3/4] w-full max-w-[300px]">
-          <div className="absolute inset-[6%] overflow-hidden rounded-t-[40%]">
-            <LivingPortrait photo={photo} className="h-full w-full" />
+        <TempleArchFrame tone="gold" className="aspect-[3/4] w-full max-w-[320px]">
+          <div className="absolute inset-[6%] overflow-hidden rounded-t-[32%]">
+            <Portrait photo={photo} priority sizes="320px" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cream/25 to-transparent" />
           </div>
         </TempleArchFrame>
 
