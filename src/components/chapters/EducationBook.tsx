@@ -80,12 +80,6 @@ export function EducationBook() {
             ))}
           </ol>
         </div>
-
-        {photo && (
-          <div className="mx-auto mt-16 aspect-[16/7] w-full max-w-3xl overflow-hidden rounded-2xl ring-1 ring-antique-gold/25">
-            <Portrait photo={photo} sizes="(max-width: 768px) 90vw, 48rem" />
-          </div>
-        )}
       </div>
     </section>
   );

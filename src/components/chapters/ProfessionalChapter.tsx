@@ -65,7 +65,7 @@ export function ProfessionalChapter() {
             className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-2xl ring-1 ring-antique-gold/30"
           >
             <Portrait photo={photo} sizes="(max-width: 1024px) 80vw, 24rem" />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cream/60 to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-emerald-depth/25 to-transparent" />
           </motion.div>
         )}
       </div>

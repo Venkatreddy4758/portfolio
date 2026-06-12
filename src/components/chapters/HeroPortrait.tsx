@@ -34,20 +34,27 @@ export function HeroPortrait() {
       {/* drifting petals + dust */}
       <Petals />
 
-      {/* soft drifting aurora — modern, atmospheric */}
+      {/* rich drifting aurora — bigger, brighter, more atmospheric */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -left-32 top-10 h-[42rem] w-[42rem] rounded-full"
-        style={{ background: "radial-gradient(circle, rgba(28,91,78,0.18), transparent 65%)", filter: "blur(40px)" }}
-        animate={{ x: [0, 60, 0], y: [0, 30, 0], opacity: [0.5, 0.85, 0.5] }}
-        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute -left-40 top-0 h-[52rem] w-[52rem] rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(28,91,78,0.32), transparent 62%)", filter: "blur(44px)" }}
+        animate={{ x: [0, 70, 0], y: [0, 40, 0], opacity: [0.6, 1, 0.6] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -right-24 bottom-0 h-[38rem] w-[38rem] rounded-full"
-        style={{ background: "radial-gradient(circle, rgba(194,160,106,0.22), transparent 65%)", filter: "blur(40px)" }}
-        animate={{ x: [0, -50, 0], y: [0, -20, 0], opacity: [0.4, 0.8, 0.4] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute -right-32 bottom-0 h-[46rem] w-[46rem] rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(194,160,106,0.36), transparent 62%)", filter: "blur(44px)" }}
+        animate={{ x: [0, -60, 0], y: [0, -28, 0], opacity: [0.5, 0.95, 0.5] }}
+        transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/3 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(216,190,126,0.28), transparent 60%)", filter: "blur(50px)" }}
+        animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.8, 0.4] }}
+        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <motion.div style={{ opacity }} className="relative z-10 flex w-full max-w-6xl flex-col items-center px-6 py-24 lg:flex-row lg:justify-between lg:gap-12">
@@ -56,17 +63,18 @@ export function HeroPortrait() {
           <p className="mb-5 font-carved text-[11px] uppercase tracking-[0.35em] text-rose">
             {hero.eyebrow}
           </p>
-          <h1 className="font-display text-5xl leading-[0.95] text-temple-stone sm:text-6xl xl:text-8xl">
+          <h1 className="font-display text-5xl leading-[0.95] text-royal-maroon sm:text-6xl xl:text-8xl" style={{ textShadow: "0 1px 1px rgba(253,247,239,0.6)" }}>
             Venkat Reddy
             <motion.span
               className="mt-1 block bg-clip-text text-transparent"
               style={{
                 backgroundImage:
-                  "linear-gradient(100deg, #1c5b4e 0%, #c2a06a 35%, #e4c98e 50%, #c2a06a 65%, #1c5b4e 100%)",
-                backgroundSize: "250% 100%",
+                  "linear-gradient(100deg, #9a7a30 0%, #b7974a 30%, #e4c98e 50%, #b7974a 70%, #9a7a30 100%)",
+                backgroundSize: "220% 100%",
+                filter: "drop-shadow(0 1px 6px rgba(183,151,74,0.35))",
               }}
               animate={{ backgroundPositionX: ["0%", "100%"] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", repeatType: "reverse" }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", repeatType: "reverse" }}
             >
               Regulapally
             </motion.span>
@@ -83,8 +91,20 @@ export function HeroPortrait() {
         {/* Portrait in temple arch with a rotating gold orbit + glow */}
         <motion.div style={{ y: yPortrait }} className="relative mt-12 w-full max-w-sm lg:mt-0 lg:flex-1">
           <div className="relative mx-auto aspect-square w-full max-w-[420px]">
-            {/* soft glow */}
-            <div aria-hidden className="absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, rgba(194,160,106,0.28), transparent 62%)", filter: "blur(20px)" }} />
+            {/* brighter halo glow */}
+            <motion.div
+              aria-hidden className="absolute inset-0 rounded-full"
+              style={{ background: "radial-gradient(circle, rgba(216,190,126,0.5), rgba(194,160,106,0.18) 45%, transparent 66%)", filter: "blur(22px)" }}
+              animate={{ opacity: [0.7, 1, 0.7], scale: [1, 1.04, 1] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            />
+            {/* slow rotating light rays — the "aura" */}
+            <motion.div
+              aria-hidden className="absolute inset-[-8%] rounded-full"
+              style={{ background: "conic-gradient(from 0deg, transparent 0deg, rgba(216,190,126,0.18) 18deg, transparent 36deg, transparent 90deg, rgba(28,91,78,0.14) 108deg, transparent 126deg, transparent 180deg, rgba(216,190,126,0.16) 198deg, transparent 216deg, transparent 300deg, rgba(28,91,78,0.12) 318deg, transparent 336deg)", filter: "blur(6px)", maskImage: "radial-gradient(circle, transparent 38%, #000 42%, #000 70%, transparent 78%)", WebkitMaskImage: "radial-gradient(circle, transparent 38%, #000 42%, #000 70%, transparent 78%)" }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+            />
             {/* slow rotating dashed orbit */}
             <motion.svg
               aria-hidden viewBox="0 0 100 100" className="absolute inset-0 h-full w-full"
@@ -102,9 +122,8 @@ export function HeroPortrait() {
             </motion.svg>
             {/* portrait arch */}
             <TempleArchFrame tone="gold" className="absolute left-1/2 top-1/2 aspect-[3/4] w-[72%] -translate-x-1/2 -translate-y-1/2">
-              <div className="absolute inset-[6%] overflow-hidden rounded-t-[40%] shadow-[0_20px_60px_-20px_rgba(18,58,48,0.5)]">
+              <div className="absolute inset-[6%] overflow-hidden rounded-t-[40%] shadow-[0_24px_70px_-20px_rgba(18,58,48,0.55)]">
                 <Portrait photo={photo} priority sizes="(max-width: 1024px) 70vw, 320px" />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cream/30 to-transparent" />
               </div>
             </TempleArchFrame>
           </div>
