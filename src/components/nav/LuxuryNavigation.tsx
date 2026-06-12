@@ -3,16 +3,13 @@
 // indicator, condenses on scroll-down and returns on scroll-up. Houses the
 // language toggle + ambient audio control. Hidden on small screens.
 import { useEffect, useRef, useState } from "react";
-import { navSections, label } from "@/config/sections";
-import { useLang } from "@/lib/LanguageProvider";
+import { navSections } from "@/config/sections";
 import { useActiveSection } from "@/lib/useActiveSection";
 import { scrollToId } from "@/components/system/LenisProvider";
-import { LanguageToggle } from "./LanguageToggle";
 import { AmbientAudioControl } from "./AmbientAudioControl";
 import { RoyalMonogram } from "@/components/art/RoyalMonogram";
 
 export function LuxuryNavigation({ onSecret }: { onSecret?: () => void }) {
-  const { lang } = useLang();
   const ids = navSections.map((s) => s.id);
   const { active } = useActiveSection(ids);
   const [hidden, setHidden] = useState(false);
@@ -65,13 +62,6 @@ export function LuxuryNavigation({ onSecret }: { onSecret?: () => void }) {
                   >
                     {s.en}
                   </span>
-                  {/* Telugu label appears on hover */}
-                  <span
-                    lang="te"
-                    className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 whitespace-nowrap pt-1 font-telugu text-[11px] text-rose opacity-0 transition-opacity group-hover:opacity-100"
-                  >
-                    {s.te}
-                  </span>
                   {isActive && (
                     <span className="absolute inset-x-2 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-antique-gold to-transparent" />
                   )}
@@ -84,10 +74,7 @@ export function LuxuryNavigation({ onSecret }: { onSecret?: () => void }) {
 
       <div className="flex items-center gap-3">
         <AmbientAudioControl />
-        <LanguageToggle />
       </div>
-      {/* keep `label` import meaningful for future locale-aware aria */}
-      <span className="sr-only">{navSections.map((s) => label(s, lang)).join(", ")}</span>
     </header>
   );
 }

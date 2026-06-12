@@ -120,7 +120,6 @@ export function MuseumGallery() {
               <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cream/90 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <span className="pointer-events-none absolute bottom-3 left-3 right-3 translate-y-2 text-left opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
                 <span className="block font-display text-sm text-temple-stone">{p.title}</span>
-                <span lang="te" className="block font-telugu text-xs text-rose">{p.titleTelugu}</span>
               </span>
             </motion.button>
           ))}
@@ -164,7 +163,6 @@ export function MuseumGallery() {
               </div>
               <figcaption className="mt-4 text-center">
                 <p className="font-display text-xl text-temple-stone">{active.title}</p>
-                <p lang="te" className="font-telugu text-sm text-rose">{active.titleTelugu}</p>
                 <p className="mt-1 font-carved text-[11px] uppercase tracking-[0.2em] text-temple-stone/50">
                   {openIndex! + 1} {g.of} {visible.length}
                   {active.location ? ` · ${active.location}` : ""}

@@ -47,7 +47,7 @@ export function InquiryForm() {
 
   return (
     <form onSubmit={submit} className="space-y-3">
-      <h3 className={`text-center text-xl text-royal-maroon ${lang === "te" ? "font-telugu" : "font-display"}`}>{c.inquiryTitle}</h3>
+      <h3 className={`text-center text-xl text-royal-maroon ${"font-display"}`}>{c.inquiryTitle}</h3>
       {/* honeypot (hidden) */}
       <input type="text" name="company" value={form.company} onChange={set("company")} tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
       <input className={field} placeholder={c.formName} value={form.name} onChange={set("name")} required aria-label={c.formName} />

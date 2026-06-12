@@ -1,50 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import {
-  Cormorant_Garamond,
-  Playfair_Display,
-  Cinzel,
-  Manrope,
-  Noto_Serif_Telugu,
-  Noto_Sans_Telugu,
-} from "next/font/google";
+import { Bodoni_Moda, Jost, Cinzel } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/system/Providers";
 import { content } from "@/data/content";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-cormorant",
-  display: "swap",
-});
-const playfair = Playfair_Display({
+// Luxury fashion-house serif for display + a clean geometric sans for body.
+const bodoni = Bodoni_Moda({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-playfair",
+  style: ["normal", "italic"],
+  variable: "--font-display-serif",
+  display: "swap",
+});
+const jost = Jost({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-body-sans",
   display: "swap",
 });
 const cinzel = Cinzel({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-cinzel",
-  display: "swap",
-});
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-const notoSerifTelugu = Noto_Serif_Telugu({
-  subsets: ["telugu"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-noto-serif-telugu",
-  display: "swap",
-});
-const notoSansTelugu = Noto_Sans_Telugu({
-  subsets: ["telugu"],
-  weight: ["400", "500", "600"],
-  variable: "--font-noto-sans-telugu",
   display: "swap",
 });
 
@@ -68,19 +45,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#5e1826",
+  themeColor: "#123a30",
   width: "device-width",
   initialScale: 1,
 };
 
-const fontVars = [
-  cormorant.variable,
-  playfair.variable,
-  cinzel.variable,
-  manrope.variable,
-  notoSerifTelugu.variable,
-  notoSansTelugu.variable,
-].join(" ");
+const fontVars = [bodoni.variable, jost.variable, cinzel.variable].join(" ");
 
 export default function RootLayout({
   children,

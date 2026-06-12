@@ -46,7 +46,7 @@ export function HoroscopeChamber() {
                 transition={{ duration: 0.6, delay: i * 0.08 }}
                 className="rounded-xl border border-antique-gold/30 bg-blush/40 p-4"
               >
-                <p className={`text-[11px] uppercase tracking-[0.18em] text-rose ${lang === "te" ? "font-telugu normal-case" : "font-carved"}`}>
+                <p className={`text-[11px] uppercase tracking-[0.18em] text-rose ${"font-carved"}`}>
                   {lang === "te" ? fieldLabels[key]?.te : fieldLabels[key]?.en}
                 </p>
                 <p className="mt-1 font-display text-xl text-temple-stone">{value}</p>

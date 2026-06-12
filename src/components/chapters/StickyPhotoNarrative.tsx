@@ -15,7 +15,7 @@ import { Portrait } from "@/components/media/Portrait";
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
 const photoTypes = ["outdoor", "education", "professional", "casual"];
-const bgByChapter = ["#fdf6ec", "#f8e3e6", "#f6e9d8", "#f0cdd3"];
+const bgByChapter = ["#fbf7ef", "#f3ecdd", "#eef0e7", "#e9dec6"];
 
 export function StickyPhotoNarrative() {
   const { lang } = useLang();
@@ -62,7 +62,7 @@ export function StickyPhotoNarrative() {
               {chapters[active].no}
             </span>
             <div className="-mt-10">
-              <p lang="te" className="font-telugu text-xl text-rose">{chapters[active].kicker}</p>
+              <p lang="te" className="font-carved text-sm uppercase tracking-[0.3em] text-rose">{chapters[active].kicker}</p>
               <h2 className="mt-2 font-display text-5xl text-royal-maroon">{chapters[active].title}</h2>
               <p className="mt-5 max-w-md font-body text-lg leading-relaxed text-temple-stone/80">
                 {chapters[active].body}
@@ -107,7 +107,7 @@ export function StickyPhotoNarrative() {
                 </div>
               )}
               <span className="font-display text-6xl text-rose/20">{ch.no}</span>
-              <p lang="te" className="-mt-4 font-telugu text-lg text-rose">{ch.kicker}</p>
+              <p className="-mt-4 font-carved text-sm uppercase tracking-[0.3em] text-rose">{ch.kicker}</p>
               <h2 className="mt-1 font-display text-3xl text-royal-maroon">{ch.title}</h2>
               <p className="mt-3 font-body text-base leading-relaxed text-temple-stone/80">{ch.body}</p>
             </div>

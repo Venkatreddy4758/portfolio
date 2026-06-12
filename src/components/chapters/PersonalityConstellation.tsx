@@ -78,7 +78,7 @@ export function PersonalityConstellation() {
                     isActive
                       ? "scale-110 border-champagne-gold bg-rose-gold text-temple-stone"
                       : "border-antique-gold/40 bg-blush/40 text-temple-stone/80"
-                  } ${lang === "te" ? "font-telugu" : "font-carved tracking-[0.12em]"}`}
+                  } ${"font-carved tracking-[0.12em]"}`}
                 >
                   {trait}
                 </motion.button>

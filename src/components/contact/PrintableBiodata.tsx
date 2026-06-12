@@ -39,9 +39,9 @@ export function PrintableBiodata() {
             <circle cx="50" cy="50" r="6" fill="#C5A15A" />
           </svg>
         </div>
-        <p className="text-[11px] uppercase tracking-[0.4em] text-[#741f3a]">శ్రీ గణేశాయ నమః</p>
+        <p className="text-[11px] uppercase tracking-[0.4em] text-[#1c5b4e]">With Blessings</p>
         <h1 className="mt-1 font-serif text-3xl text-[#5e1826]">{profile.fullName}</h1>
-        <p className="font-serif text-lg text-[#741f3a]">{profile.teluguName}</p>
+        <p className="font-serif text-sm uppercase tracking-[0.3em] text-[#1c5b4e]">Marriage Biodata</p>
       </header>
 
       <div className="mt-6 grid grid-cols-[1fr_60mm] gap-6">
@@ -120,7 +120,7 @@ export function PrintableBiodata() {
         ) : (
           <p className="text-[11px] italic text-[#741f3a]">Contact details are shared privately with interested families.</p>
         )}
-        <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-[#C5A15A]">శుభమస్తు</p>
+        <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-[#b7974a]">With our blessings</p>
       </div>
     </div>
   );

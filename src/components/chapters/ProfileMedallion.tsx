@@ -26,7 +26,7 @@ export function ProfileMedallion() {
   return (
     <section className="relative bg-blush-deep py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionDivider className="mb-14" label={lang === "te" ? "వివరాలు" : "At a Glance"} />
+        <SectionDivider className="mb-14" label={"At a Glance"} />
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
           {labels.map((m, i) => (
             <motion.div
@@ -52,13 +52,13 @@ export function ProfileMedallion() {
                     {m.key === "born" ? "★" : ""}
                     {m.key === "height" ? "↥" : ""}
                     {m.key === "native" ? "⌂" : ""}
-                    {m.key === "tongue" ? "అ" : ""}
+                    {m.key === "tongue" ? "✶" : ""}
                     {m.key === "profession" ? "✦" : ""}
                     {m.key === "city" ? "◈" : ""}
                   </span>
                 </div>
               </div>
-              <p className={`mt-4 text-center text-[11px] uppercase tracking-[0.2em] text-rose ${lang === "te" ? "font-telugu normal-case tracking-normal text-sm" : "font-carved"}`}>
+              <p className={`mt-4 text-center text-[11px] uppercase tracking-[0.2em] text-rose ${"font-carved"}`}>
                 {m.label}
               </p>
               <p className="mt-1 text-center font-body text-sm text-temple-stone/90">{values[m.key]}</p>

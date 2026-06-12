@@ -102,16 +102,15 @@ export function LuxuryOpeningSequence({ onDone }: { onDone?: () => void }) {
             {stage >= 2 && (
               <>
                 <motion.p
-                  lang="te"
-                  className="font-telugu text-3xl text-royal-maroon md:text-5xl"
+                  className="font-carved text-xs uppercase tracking-[0.4em] text-rose"
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  {profile.teluguName}
+                  {content.hero.en.eyebrow}
                 </motion.p>
                 <motion.h1
-                  className="mt-3 font-display text-4xl tracking-wide text-temple-stone md:text-6xl"
+                  className="mt-4 font-display text-4xl tracking-wide text-royal-maroon md:text-6xl"
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}

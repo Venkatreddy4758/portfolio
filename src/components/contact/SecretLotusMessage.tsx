@@ -24,11 +24,11 @@ export function SecretBlessing({ open, onClose }: { open: boolean; onClose: () =
           aria-label="Close blessing"
         >
           <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="flex flex-col items-center gap-6">
-            <LotusMedallion size={64} tone="#E4C98E" open />
-            <p lang="te" className="font-telugu text-2xl leading-relaxed text-royal-maroon md:text-4xl">
-              రెండు హృదయాలు,
-              <br />రెండు కుటుంబాలు,
-              <br />ఒక అందమైన భవిష్యత్తు.
+            <LotusMedallion size={64} tone="#B7974A" open />
+            <p className="font-display text-2xl leading-relaxed text-royal-maroon md:text-4xl">
+              Two hearts,
+              <br />two families,
+              <br />one beautiful future.
             </p>
             <p className="font-body text-sm italic text-temple-stone/60">{s.blessing}</p>
           </motion.div>
@@ -68,12 +68,9 @@ export function SecretLotusMessage() {
           >
             <motion.div initial={{ scale: 0.85, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }} className="flex flex-col items-center gap-6">
               <motion.div animate={{ rotate: 360 }} transition={{ duration: 1.4 }}>
-                <LotusMedallion size={72} tone="#E4C98E" open />
+                <LotusMedallion size={72} tone="#B7974A" open />
               </motion.div>
-              <p lang="te" className="max-w-xl font-telugu text-2xl leading-relaxed text-royal-maroon md:text-3xl">
-                {s.lotusTe}
-              </p>
-              <motion.p className="font-body text-sm italic text-temple-stone/60" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
+              <motion.p className="max-w-xl font-display text-2xl italic leading-relaxed text-royal-maroon md:text-3xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
                 {s.lotus}
               </motion.p>
             </motion.div>

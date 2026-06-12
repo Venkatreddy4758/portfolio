@@ -19,9 +19,9 @@ export function FamilyCourtyard() {
   const photo = photoByType("family") ?? photoByType("casual");
 
   const members = [
-    { name: profile.family.grandfather, role: lang === "te" ? "తాత" : "Grandfather" },
-    { name: profile.family.father.name, role: `${lang === "te" ? "నాన్న" : "Father"} · ${profile.family.father.occupation}` },
-    { name: profile.family.mother.name, role: `${lang === "te" ? "అమ్మ" : "Mother"} · ${profile.family.mother.occupation}` },
+    { name: profile.family.grandfather, role: "Grandfather" },
+    { name: profile.family.father.name, role: `${"Father"} · ${profile.family.father.occupation}` },
+    { name: profile.family.mother.name, role: `${"Mother"} · ${profile.family.mother.occupation}` },
     ...profile.family.siblings.map((s) => ({
       name: s.name,
       role: `${s.relation} · ${s.profession}${s.maritalStatus ? " · " + s.maritalStatus : ""}`,
@@ -29,8 +29,8 @@ export function FamilyCourtyard() {
   ];
 
   return (
-    <section id="family" className="grain relative overflow-hidden py-10" style={{ background: "radial-gradient(120% 90% at 50% 0%, #fdf6ec 0%, #f6e9d8 45%, #f0cdd3 100%)" }}>
-      <ToranamBorder count={16} tone="#C27C88" />
+    <section id="family" className="grain relative overflow-hidden py-10" style={{ background: "radial-gradient(120% 90% at 50% 0%, #fbf7ef 0%, #eef0e7 45%, #e9dec6 100%)" }}>
+      <ToranamBorder count={16} tone="#2E7D6B" />
 
       <div className="relative mx-auto max-w-6xl px-6 py-16">
         {/* flanking pillars (desktop) */}

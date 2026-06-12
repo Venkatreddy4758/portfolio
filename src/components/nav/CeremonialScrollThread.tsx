@@ -1,13 +1,11 @@
 "use client";
 // Vertical ceremonial gold thread on the right. Extends as you scroll, lotus
 // markers activate per chapter, current chapter label shows, brightens near end.
-import { sections, label } from "@/config/sections";
-import { useLang } from "@/lib/LanguageProvider";
+import { sections } from "@/config/sections";
 import { useActiveSection } from "@/lib/useActiveSection";
 import { scrollToId } from "@/components/system/LenisProvider";
 
 export function CeremonialScrollThread() {
-  const { lang } = useLang();
   const ids = sections.map((s) => s.id);
   const { active, progress } = useActiveSection(ids);
   const activeIndex = Math.max(0, sections.findIndex((s) => s.id === active));
@@ -36,7 +34,7 @@ export function CeremonialScrollThread() {
               key={s.id}
               onClick={() => scrollToId(s.id)}
               className="group relative z-10 my-1 flex h-4 w-4 items-center justify-center"
-              aria-label={label(s, lang)}
+              aria-label={s.en}
             >
               <span
                 className={`h-2 w-2 rotate-45 transition-all duration-500 ${
@@ -44,12 +42,11 @@ export function CeremonialScrollThread() {
                 } ${isActive ? "scale-150" : ""}`}
               />
               <span
-                lang={lang === "te" ? "te" : undefined}
-                className={`absolute right-full mr-3 whitespace-nowrap text-right text-[10px] tracking-[0.15em] transition-opacity ${
+                className={`absolute right-full mr-3 whitespace-nowrap text-right font-carved text-[10px] uppercase tracking-[0.15em] text-royal-maroon transition-opacity ${
                   isActive ? "opacity-100" : "opacity-0 group-hover:opacity-70"
-                } ${lang === "te" ? "font-telugu text-rose" : "font-carved uppercase text-royal-maroon"}`}
+                }`}
               >
-                {label(s, lang)}
+                {s.en}
               </span>
             </button>
           );

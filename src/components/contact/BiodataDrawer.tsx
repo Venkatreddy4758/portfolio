@@ -54,7 +54,6 @@ export function BiodataDrawer({ open, onClose, onShare }: { open: boolean; onClo
           <div className="flex flex-col items-center text-center">
             <LotusMedallion size={44} tone="#9E2637" open />
             <h2 className="mt-3 font-display text-3xl text-royal-maroon">{profile.fullName}</h2>
-            <p lang="te" className="font-telugu text-lg text-earth-brown">{profile.teluguName}</p>
             <div className="gold-rule my-4 w-40" />
           </div>
 

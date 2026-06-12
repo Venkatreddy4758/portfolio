@@ -47,7 +47,7 @@ export function MarriageValues() {
                 </motion.div>
                 {!isOpen && (
                   <span className="mt-3 block font-carved text-[10px] uppercase tracking-[0.2em] text-rose/70">
-                    {lang === "te" ? "తెరవండి" : "Unfold"} +
+                    {"Unfold"} +
                   </span>
                 )}
               </motion.button>

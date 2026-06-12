@@ -16,10 +16,10 @@ export function ProfessionalChapter() {
   const photo = photoByType("professional");
 
   const facts = [
-    { k: lang === "te" ? "హోదా" : "Role", v: profile.profession.title },
-    { k: lang === "te" ? "సంస్థ" : "Company", v: profile.profession.company },
-    { k: lang === "te" ? "ప్రాంతం" : "Location", v: profile.profession.location },
-    { k: lang === "te" ? "విధానం" : "Work Mode", v: profile.profession.workMode },
+    { k: "Role", v: profile.profession.title },
+    { k: "Company", v: profile.profession.company },
+    { k: "Location", v: profile.profession.location },
+    { k: "Work Mode", v: profile.profession.workMode },
   ];
 
   return (
@@ -49,7 +49,7 @@ export function ProfessionalChapter() {
                 transition={{ duration: 0.6 }}
                 className="rounded-xl border border-antique-gold/25 bg-rose/[0.03] p-4 backdrop-blur-sm"
               >
-                <p className={`text-[11px] uppercase tracking-[0.2em] text-rose ${lang === "te" ? "font-telugu normal-case" : "font-carved"}`}>{f.k}</p>
+                <p className={`text-[11px] uppercase tracking-[0.2em] text-rose ${"font-carved"}`}>{f.k}</p>
                 <p className="mt-1 font-display text-xl text-temple-stone">{f.v}</p>
               </motion.div>
             ))}

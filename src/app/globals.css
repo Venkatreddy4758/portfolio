@@ -5,36 +5,40 @@
    text-antique-gold, font-display, font-telugu, ease-silk, etc.
    ───────────────────────────────────────────────────────────────────────── */
 @theme {
-  --color-temple-stone: #3a211d;
-  --color-royal-maroon: #5e1826;
-  --color-deep-wine: #741f3a;
-  --color-kumkum-red: #9e2637;
-  --color-antique-gold: #c5a15a;
-  --color-champagne-gold: #e4c98e;
-  --color-warm-ivory: #f8f0df;
-  --color-sandalwood: #d6b58a;
-  --color-turmeric: #d5a437;
-  --color-lotus-rose: #b95872;
-  --color-peacock-green: #174e48;
-  --color-emerald-depth: #153b34;
-  --color-silk-plum: #3d2039;
-  --color-earth-brown: #68452f;
-  --color-moon-cream: #fff9ed;
+  /* ── QUIET-LUXURY PALETTE: ivory · deep emerald · gold ──
+     Token NAMES are kept (so existing utilities still apply) but their VALUES
+     now express the premium emerald/gold/ivory scheme.
+     Backgrounds (light): cream, blush, blush-deep
+     Text (dark):        royal-maroon (= deep emerald), temple-stone (= espresso)
+     Accents:            rose (= emerald), rose-gold/antique-gold (= gold) */
+  --color-temple-stone: #2c2519; /* espresso — body text */
+  --color-royal-maroon: #123a30; /* deep emerald — headings */
+  --color-deep-wine: #0f3d33;    /* deep emerald (feature bands) */
+  --color-kumkum-red: #1c5b4e;
+  --color-antique-gold: #b7974a; /* gold */
+  --color-champagne-gold: #d8be7e; /* soft champagne gold */
+  --color-warm-ivory: #fbf7ef;
+  --color-sandalwood: #e9dec6;
+  --color-turmeric: #b7974a;
+  --color-lotus-rose: #1c5b4e;
+  --color-peacock-green: #0f3d33;
+  --color-emerald-depth: #0c2f28;
+  --color-silk-plum: #123a30;
+  --color-earth-brown: #6b5a3a;
+  --color-moon-cream: #fdfaf3;
 
-  /* Soft blush & gold (light theme) */
-  --color-cream: #fdf6ec;
-  --color-blush: #f8e3e6;
-  --color-blush-deep: #f0cdd3;
-  --color-rose: #c27c88;
-  --color-rose-soft: #d99aa4;
-  --color-rose-gold: #c2a06a;
+  /* Light surfaces + accents */
+  --color-cream: #fbf7ef;        /* primary ivory base */
+  --color-blush: #f3ecdd;        /* warm ivory / sand */
+  --color-blush-deep: #e9dec6;   /* champagne sand */
+  --color-rose: #1c5b4e;         /* emerald accent (labels/eyebrows) */
+  --color-rose-soft: #2e7d6b;    /* lighter emerald */
+  --color-rose-gold: #b7974a;    /* gold accent */
 
-  --font-display: var(--font-cormorant), Georgia, serif;
-  --font-display-alt: var(--font-playfair), Georgia, serif;
+  --font-display: var(--font-display-serif), "Bodoni Moda", Georgia, serif;
+  --font-display-alt: var(--font-display-serif), Georgia, serif;
   --font-carved: var(--font-cinzel), Georgia, serif;
-  --font-body: var(--font-manrope), system-ui, sans-serif;
-  --font-telugu: var(--font-noto-serif-telugu), serif;
-  --font-telugu-sans: var(--font-noto-sans-telugu), sans-serif;
+  --font-body: var(--font-body-sans), system-ui, sans-serif;
 
   --ease-silk: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-stone: cubic-bezier(0.65, 0, 0.35, 1);
@@ -43,8 +47,8 @@
 
 /* ── Base ── */
 :root {
-  --bg: #fdf6ec;
-  --fg: #5e1826;
+  --bg: #fbf7ef;
+  --fg: #2c2519;
   color-scheme: light;
 }
 
@@ -60,17 +64,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Telugu text needs more line-height and the serif Telugu face. */
-.font-telugu,
-:lang(te) {
-  font-family: var(--font-telugu);
-  line-height: 1.7;
-  word-break: keep-all;
-}
-
 ::selection {
   background: var(--color-antique-gold);
-  color: var(--color-temple-stone);
+  color: var(--color-moon-cream);
 }
 
 /* ── Custom cursor ── */

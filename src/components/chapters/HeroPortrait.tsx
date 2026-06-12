@@ -4,7 +4,6 @@
 // responsive name type and a scroll indicator.
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { profile } from "@/data/profile";
 import { content } from "@/data/content";
 import { photoByType } from "@/data/photos";
 import { useLang } from "@/lib/LanguageProvider";
@@ -29,7 +28,7 @@ export function HeroPortrait() {
       className="grain relative flex min-h-screen items-center justify-center overflow-hidden"
       style={{
         background:
-          "radial-gradient(120% 90% at 50% 8%, #fdf6ec 0%, #f8e3e6 48%, #f0cdd3 100%)",
+          "radial-gradient(120% 90% at 50% 8%, #fbf7ef 0%, #f3ecdd 48%, #e9dec6 100%)",
       }}
     >
       {/* drifting petals + dust */}
@@ -45,9 +44,6 @@ export function HeroPortrait() {
             Venkat Reddy
             <span className="mt-1 block text-rose">Regulapally</span>
           </h1>
-          <p lang="te" className="mt-4 font-telugu text-2xl text-royal-maroon md:text-3xl">
-            {profile.teluguName}
-          </p>
           <div className="gold-rule my-7 w-40 lg:mx-0 mx-auto" />
           <div className="space-y-1 font-body text-sm text-temple-stone/75 md:text-base">
             <p>{hero.tagline1}</p>
@@ -102,7 +98,7 @@ function Petals() {
               top: "-5%",
               width: size,
               height: size * 1.4,
-              background: i % 3 === 0 ? "#C27C88" : "#C2A06A",
+              background: i % 3 === 0 ? "#2E7D6B" : "#C2A06A",
               opacity: 0.5,
             }}
             animate={{ y: ["-5vh", "105vh"], x: [0, 30, -20, 10], rotate: [0, 180, 360] }}

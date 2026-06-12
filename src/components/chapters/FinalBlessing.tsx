@@ -46,15 +46,9 @@ export function FinalBlessing({ onShare }: { onShare?: () => void }) {
           <br />
           {f.line2}
         </motion.h2>
-        <p lang="te" className="mt-5 font-telugu text-xl text-deep-wine">
-          {content.finale.te.line1}
-          <br />
-          {content.finale.te.line2}
-        </p>
 
         <div className="gold-rule my-8 w-48" />
         <p className="font-display text-2xl text-royal-maroon">{profile.fullName}</p>
-        <p lang="te" className="font-telugu text-lg text-deep-wine">{profile.teluguName}</p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <a href="/biodata/print" target="_blank" data-cursor="open" className="rounded-full bg-cream px-6 py-3 font-carved text-[11px] uppercase tracking-[0.18em] text-temple-stone">
@@ -70,8 +64,8 @@ export function FinalBlessing({ onShare }: { onShare?: () => void }) {
           )}
         </div>
 
-        <p lang="te" className="mt-12 font-telugu text-3xl text-turmeric">{f.sanskrit === "శుభమస్తు" ? f.sanskrit : "శుభమస్తు"}</p>
-        <p className="mt-3 max-w-md font-body text-sm italic text-earth-brown">{f.blessing}</p>
+        <p className="mt-12 font-display text-2xl italic tracking-wide text-rose-gold">With our blessings</p>
+        <p className="mt-3 max-w-md font-body text-sm italic text-temple-stone/70">{f.blessing}</p>
       </div>
     </section>
   );

@@ -9,10 +9,10 @@ import { profile } from "@/data/profile";
 import { useLang } from "@/lib/LanguageProvider";
 
 const skyByPhase = [
-  "linear-gradient(180deg, #FDF6EC 0%, #F6E9D8 100%)", // morning — warm cream
-  "linear-gradient(180deg, #FDF6EC 0%, #EAE6DA 100%)", // work — soft neutral
-  "linear-gradient(180deg, #F8E3E6 0%, #F0CDD3 100%)", // evening — blush
-  "linear-gradient(180deg, #F6E9D8 0%, #F0CDD3 100%)", // weekend — sand to blush
+  "linear-gradient(180deg, #fbf7ef 0%, #eef0e7 100%)", // morning — warm cream
+  "linear-gradient(180deg, #fbf7ef 0%, #eef0e7 100%)", // work — soft neutral
+  "linear-gradient(180deg, #f3ecdd 0%, #e9dec6 100%)", // evening — blush
+  "linear-gradient(180deg, #eef0e7 0%, #e9dec6 100%)", // weekend — sand to blush
 ];
 const clockTimes = ["7:00", "11:00", "19:00", "—"];
 
@@ -35,7 +35,7 @@ export function DayInLifeTimeline() {
               data-cursor="open"
               className={`rounded-full border px-5 py-2 text-sm transition-all ${
                 active === i ? "border-royal-maroon bg-rose/90 text-temple-stone" : "border-royal-maroon/40 text-temple-stone/80"
-              } ${lang === "te" ? "font-telugu" : "font-carved tracking-[0.12em]"}`}
+              } ${"font-carved tracking-[0.12em]"}`}
             >
               {b.phase}
             </button>

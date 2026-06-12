@@ -67,7 +67,7 @@ export function CinematicFilmstrip() {
                   <span key={k} className="h-2 w-3 rounded-[2px] bg-rose/15" />
                 ))}
               </div>
-              <p className={`mt-2 text-center text-sm text-rose ${lang === "te" ? "font-telugu" : "font-display"}`}>
+              <p className={`mt-2 text-center text-sm text-rose ${"font-display"}`}>
                 {f.captions[i] ?? photo.title}
               </p>
               {photo.location && (
@@ -83,7 +83,7 @@ export function CinematicFilmstrip() {
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-blush to-transparent" />
       </div>
       <p className="mt-6 text-center font-carved text-[10px] uppercase tracking-[0.25em] text-temple-stone/40">
-        {lang === "te" ? "లాగండి / స్క్రోల్ చేయండి" : "Drag · Scroll · Swipe"}
+        {"Drag · Scroll · Swipe"}
       </p>
     </section>
   );

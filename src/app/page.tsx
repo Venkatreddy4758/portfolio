@@ -22,10 +22,12 @@ import { MarriageValues } from "@/components/chapters/MarriageValues";
 import { PartnerExpectations } from "@/components/chapters/PartnerExpectations";
 import { TeluguPoetryInterlude } from "@/components/chapters/TeluguPoetryInterlude";
 import { CinematicFilmstrip } from "@/components/media/CinematicFilmstrip";
+import { CinematicReveal } from "@/components/media/CinematicReveal";
 import { MuseumGallery } from "@/components/media/MuseumGallery";
 import { PrivateContactPanel } from "@/components/contact/PrivateContactPanel";
 import { FinalBlessing } from "@/components/chapters/FinalBlessing";
 import { SecretLotusMessage, SecretBlessing } from "@/components/contact/SecretLotusMessage";
+import { photoByType } from "@/data/photos";
 
 export default function Home() {
   const [secret, setSecret] = useState(false);
@@ -41,6 +43,12 @@ export default function Home() {
         <StickyPhotoNarrative />
         <ProfileMedallion />
         <BeyondBiodata />
+        <CinematicReveal
+          photo={photoByType("outdoor")!}
+          kicker="From the Soil of Telangana to the World"
+          title="A Grounded Spirit"
+          caption="Shaped by family and place, carried with quiet confidence."
+        />
         <TeluguPoetryInterlude index={3} tone="var(--color-blush)" />
         <JourneyMap />
         <EducationBook />
@@ -53,6 +61,12 @@ export default function Home() {
         <HoroscopeChamber />
         <MarriageValues />
         <PartnerExpectations />
+        <CinematicReveal
+          photo={photoByType("travel")!}
+          kicker="A Life in Motion"
+          title="Eyes on the Future"
+          caption="Distances travelled, perspective gained, a life built with purpose."
+        />
         <CinematicFilmstrip />
         <MuseumGallery />
         <TeluguPoetryInterlude index={2} tone="var(--color-blush)" />

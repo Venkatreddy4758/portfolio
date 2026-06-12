@@ -20,7 +20,7 @@ export function TelanganaRoots() {
   const y = useTransform(scrollYProgress, [0, 1], [-40, 40]);
 
   return (
-    <section ref={ref} className="relative overflow-hidden py-28" style={{ background: "linear-gradient(180deg, #f8e3e6 0%, #f6e9d8 55%, #f0cdd3 100%)" }}>
+    <section ref={ref} className="relative overflow-hidden py-28" style={{ background: "linear-gradient(180deg, #f3ecdd 0%, #eef0e7 55%, #e9dec6 100%)" }}>
       {photo && (
         <motion.div style={{ y }} className="absolute inset-0 opacity-25">
           <Portrait photo={photo} sizes="100vw" />

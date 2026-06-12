@@ -24,7 +24,7 @@ export function EducationBook() {
       id="education"
       ref={ref}
       className="grain relative overflow-hidden py-28"
-      style={{ background: "radial-gradient(120% 100% at 70% 0%, #fdf6ec 0%, #f8e3e6 55%, #f0cdd3 100%)" }}
+      style={{ background: "radial-gradient(120% 100% at 70% 0%, #fbf7ef 0%, #f3ecdd 55%, #e9dec6 100%)" }}
     >
       {/* soft window light */}
       <div aria-hidden className="pointer-events-none absolute -right-20 top-0 h-96 w-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(229,201,142,0.18), transparent 70%)" }} />
@@ -42,7 +42,7 @@ export function EducationBook() {
                 <div>
                   <p className="font-carved text-xs uppercase tracking-[0.3em] text-rose">Curriculum Vitae</p>
                   <div className="gold-rule my-4" />
-                  <p lang="te" className="font-telugu text-lg text-royal-maroon">ప్రపంచ దృష్టి</p>
+                  <p className="font-display text-lg italic text-royal-maroon">A Global Outlook</p>
                 </div>
               </div>
               {/* book cover that swings open */}

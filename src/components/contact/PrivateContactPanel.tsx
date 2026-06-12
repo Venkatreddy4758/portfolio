@@ -27,7 +27,7 @@ export function PrivateContactPanel() {
     <section id="contact" className="grain relative bg-blush py-28">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <SectionDivider className="mb-8" />
-        <h2 className={`text-4xl text-royal-maroon md:text-5xl ${lang === "te" ? "font-telugu" : "font-display"}`}>{c.title}</h2>
+        <h2 className={`text-4xl text-royal-maroon md:text-5xl ${"font-display"}`}>{c.title}</h2>
 
         <p className="mx-auto mt-6 max-w-md font-body text-temple-stone/70">{c.restricted}</p>
 

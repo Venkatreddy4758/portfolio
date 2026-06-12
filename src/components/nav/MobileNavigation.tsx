@@ -3,11 +3,9 @@
 // the rest live in an elegant sheet. Generous touch targets, no tiny text.
 import { useState } from "react";
 import { Home, BookOpen, GraduationCap, Users, Image as ImageIcon, Menu, X, Heart, Mail, Briefcase } from "lucide-react";
-import { navSections, label, type Section } from "@/config/sections";
-import { useLang } from "@/lib/LanguageProvider";
+import { navSections, type Section } from "@/config/sections";
 import { useActiveSection } from "@/lib/useActiveSection";
 import { scrollToId } from "@/components/system/LenisProvider";
-import { LanguageToggle } from "./LanguageToggle";
 import { AmbientAudioControl } from "./AmbientAudioControl";
 
 const icons: Record<string, React.ComponentType<{ size?: number }>> = {
@@ -24,7 +22,6 @@ const icons: Record<string, React.ComponentType<{ size?: number }>> = {
 const primary = ["intro", "story", "gallery", "values", "contact"];
 
 export function MobileNavigation() {
-  const { lang } = useLang();
   const ids = navSections.map((s) => s.id);
   const { active } = useActiveSection(ids);
   const [open, setOpen] = useState(false);
@@ -46,8 +43,8 @@ export function MobileNavigation() {
         <span className={isActive ? "text-royal-maroon" : "text-temple-stone/55"}>
           <Icon size={20} />
         </span>
-        <span className={`text-[9px] tracking-wide ${isActive ? "text-royal-maroon" : "text-temple-stone/45"} ${lang === "te" ? "font-telugu" : ""}`}>
-          {label(s, lang)}
+        <span className={`text-[9px] tracking-wide ${isActive ? "text-royal-maroon" : "text-temple-stone/45"}`}>
+          {s.en}
         </span>
       </button>
     );
@@ -96,14 +93,12 @@ export function MobileNavigation() {
                     className="w-full rounded-xl border border-antique-gold/20 px-4 py-3 text-left"
                   >
                     <span className="block font-display text-base text-temple-stone">{s.en}</span>
-                    <span lang="te" className="block font-telugu text-sm text-rose">{s.te}</span>
                   </button>
                 </li>
               ))}
             </ul>
-            <div className="mt-5 flex items-center justify-between">
+            <div className="mt-5 flex items-center justify-center">
               <AmbientAudioControl />
-              <LanguageToggle />
             </div>
           </div>
         </div>
